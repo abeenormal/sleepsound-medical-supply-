@@ -1,8 +1,8 @@
 allow_embedding: false
 dependencies: []
 metadata: {description: SleepSound provides CPAP and other medical supplies for a better night's sleep., title: SleepSound}
-name: 'SleepSound medical supply '
-package_name: SleepSound_medical_supply_
+name: 'SleepSound Medical Supply '
+package_name: SleepSound_Medical_Supply_
 renamed: true
 runtime_options:
   client_version: '3'
@@ -13,4 +13,5 @@ services:
 - client_config: {}
   server_config: {}
   source: /runtime/services/tables.yml
-startup_form: Form1
+startup: {module: Base, type: form}
+startup_form: null
