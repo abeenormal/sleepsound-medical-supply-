@@ -4,10 +4,23 @@ components:
   name: content_panel
   properties: {col_widths: '{}'}
   type: ColumnPanel
-- layout_properties: {slot: nav-right}
+- components:
+  - layout_properties: {}
+    name: my_purchases
+    properties: {icon: 'fa:fast-forward', text: My Purchases}
+    type: Link
+  - layout_properties: {}
+    name: sign_in
+    properties: {icon: 'fa:user', text: Sign In}
+    type: Link
+  layout_properties: {slot: nav-right}
   name: navbar_links
   properties: {}
   type: FlowPanel
+- layout_properties: {slot: top-left-btn}
+  name: home
+  properties: {background: '', icon: 'fa:cloud', text: SleepSound}
+  type: Link
 container:
   properties: {html: '@theme:standard-page.html'}
   type: HtmlTemplate
