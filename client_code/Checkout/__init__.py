@@ -19,11 +19,12 @@ class Checkout(CheckoutTemplate):
     # Any code you write here will run before the form opens.
 
   def update_form(self, id_name):
-    product = anvil.server.call('get_product_details', id_name)
-    self.name_label.content = product["name"]
-    self.description_label.text = product['description']
-    self.price_label.text = f"${product['price']} USD"
-    self.image_content.source = product['image']
+    products = anvil.server.call('get_product_details', id_name)
+    self.product = products
+    self.name_label.content = products["name"]
+    self.description_label.text = products['description']
+    self.price_label.text = f"${products['price']} USD"
+    self.image_content.source = products['image']
 
   def back_button_click(self, **event_args):
     """This method is called when the button is clicked"""
