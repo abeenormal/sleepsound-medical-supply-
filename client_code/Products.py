@@ -11,10 +11,10 @@ from anvil.tables import app_tables
 
 
 class Products(ProductsTemplate):
-  def __init__(self,product_name,description,button_text, image,button_callback, **properties):
+  def __init__(self,name,description,button_text,image,button_callback, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    self.name_label.content = product_name
+    self.name_label.content = name
     self.description_label.content = description
     self.button_text = button_text
     self.image_content.source = image

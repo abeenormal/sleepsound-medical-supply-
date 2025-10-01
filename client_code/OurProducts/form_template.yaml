@@ -1,7 +1,7 @@
 components:
-- layout_properties: {grid_position: 'HKZZKG,ZOHGDX'}
-  name: label_1
-  properties: {align: center, font_size: 20, text: My Products}
-  type: Label
+- layout_properties: {grid_position: 'ROJIQV,QSVOZE'}
+  name: content_panel
+  properties: {}
+  type: ColumnPanel
 container: {type: ColumnPanel}
 is_package: true
