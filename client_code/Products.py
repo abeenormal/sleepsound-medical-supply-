@@ -11,12 +11,12 @@ from anvil.tables import app_tables
 
 
 class Products(ProductsTemplate):
-  def __init__(self,name,description,button_text,image,button_callback, **properties):
+  def __init__(self,name,button_text,description,image,button_callback, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     self.name_label.content = name
+    self.button.text = button_text
     self.description_label.content = description
-    self.button_text = button_text
     self.image_content.source = image
     self.button_callback = button_callback
     
@@ -26,3 +26,7 @@ class Products(ProductsTemplate):
   def button_click(self, **event_args):
     """This method is called when the button is clicked"""
     self.button_callback(self.name_label.content.lower())
+
+  def buy_button_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    pass

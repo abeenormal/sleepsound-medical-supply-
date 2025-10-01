@@ -17,19 +17,19 @@ components:
         description
       font_size: 20
     type: RichText
-  - event_bindings: {click: button_click}
+  - event_bindings: {click: buy_button_click}
     layout_properties: {grid_position: 'MXPRXM,HBMVWV'}
     name: button
     properties:
-      bold: true
+      bold: false
       font_size: 20
       role: tonal-button
       text: |
-        button
+        price
     type: Button
   layout_properties: {grid_position: 'CQNLFN,FGGXAK'}
   name: content_panel
-  properties: {}
+  properties: {role: elevated-card}
   type: ColumnPanel
 container: {type: ColumnPanel}
 custom_component: true
