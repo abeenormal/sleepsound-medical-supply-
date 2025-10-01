@@ -5,11 +5,13 @@ components:
     name: about_us
     properties: {align: left, bold: false, font: '', font_size: 20, foreground: '', italic: true, role: null, text: About Us}
     type: Link
-  - layout_properties: {}
+  - event_bindings: {click: my_purchases_click}
+    layout_properties: {}
     name: my_purchases
     properties: {font_size: 20, icon: 'fa:fast-forward', text: My Purchases}
     type: Link
-  - layout_properties: {}
+  - event_bindings: {click: sign_in_click}
+    layout_properties: {}
     name: sign_in
     properties: {font_size: 21, icon: 'fa:user', text: Sign In}
     type: Link
@@ -27,13 +29,13 @@ components:
   type: ColumnPanel
 - components:
   - layout_properties: {grid_position: 'UPKAFJ,CDINFW', row_background: ''}
-    name: image_1
+    name: home
     properties: {alt_text: return home, height: 43.59999084472656, source: _/theme/Sleeplogo.png}
     type: Image
   data_bindings: []
-  event_bindings: {click: link_1_click}
+  event_bindings: {click: title_click}
   layout_properties: {slot: top-left-btn}
-  name: link_1
+  name: title
   properties: {align: left, icon: '', icon_align: top, role: null}
   type: Link
 container:
