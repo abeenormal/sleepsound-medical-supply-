@@ -8,9 +8,8 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
-from ..Checkout import Checkout
 from ..Products import Products
-
+from ..Checkout import Checkout
 
 class OurProducts(OurProductsTemplate):
   def __init__(self, **properties):
@@ -25,9 +24,9 @@ class OurProducts(OurProductsTemplate):
     self.content_panel.clear()
     self.load_products()
 
-  def render_checkout(self, product_name):
+  def render_checkout(self, id_name):
     self.content_panel.clear()
-    self.load_products()
+    self.content_panel.add_component(Checkout(id_name, self.back))
 
   def load_products(self):
     products = anvil.server.call ("get_all_products").search()

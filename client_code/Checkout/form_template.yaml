@@ -62,7 +62,8 @@ components:
     name: spacer_1
     properties: {height: 107.60000610351562}
     type: Spacer
-  - layout_properties: {grid_position: 'NQFUYE,QTPZUW'}
+  - event_bindings: {click: buy_click}
+    layout_properties: {grid_position: 'NQFUYE,QTPZUW'}
     name: buy
     properties: {bold: true, font_size: 40, role: tonal-button, text: BUY NOW!}
     type: Button

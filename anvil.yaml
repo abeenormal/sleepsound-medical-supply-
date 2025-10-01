@@ -4,7 +4,7 @@ db_schema:
     client: none
     columns:
     - admin_ui: {order: 1, width: 200}
-      name: product_name
+      name: name
       type: string
     - admin_ui: {order: 3, width: 200}
       name: description
@@ -19,7 +19,7 @@ db_schema:
       name: image
       type: media
     - admin_ui: {order: 6, width: 200}
-      name: name
+      name: id_name
       type: string
     server: full
     title: Products
@@ -50,6 +50,9 @@ db_schema:
     - admin_ui: {order: 7, width: 200}
       name: signed_up
       type: datetime
+    - admin_ui: {order: 8, width: 200}
+      name: purchased_products
+      type: simpleObject
     server: full
     title: Users
 dependencies: []

@@ -29,4 +29,8 @@ class Checkout(CheckoutTemplate):
     """This method is called when the button is clicked"""
     self.back_button_callback()
 
+  def buy_click(self, **event_args):
+    """This method is called when the button is clicked"""
+  pass
+
   
