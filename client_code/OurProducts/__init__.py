@@ -18,6 +18,8 @@ class OurProducts(OurProductsTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     self.load_products()
+
+    
     # Any code you write here will run before the form opens.
   def back(self):
     self.content_panel.clear()

@@ -11,7 +11,7 @@ import anvil.server
 # rather than in the user's browser.
 @anvil.server.callable
 def get_product_details(name):
-  return app_tables.products.get(id_name=name)
+  return app_tables.products.get(name)
 
 
 @anvil.server.callable
