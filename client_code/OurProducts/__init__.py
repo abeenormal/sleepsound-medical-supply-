@@ -32,9 +32,9 @@ class OurProducts(OurProductsTemplate):
     products = anvil.server.call ("get_all_products").search()
     products_panel = GridPanel()
 
-    for i, products in enumerate(products):
-      c = Products(name=products["name"], button_text=f"Purchase for ${products['price']}", description=products["description"], image=products["image"], button_callback=self.render_checkout)
-      products_panel.add_component(c, row=str(i//2), width_xs=6)
+    for i, product in enumerate(products):
+      c = Products(name=product["name"], button_text=f"Purchase for ${product['price']}", description=products["description"], image=products["image"], button_callback=self.render_checkout)
+      products_panel.add_component(c, row=str(i//2), width_xs=4)
 
     self.content_panel.add_component(products_panel)
 
