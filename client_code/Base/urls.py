@@ -10,9 +10,10 @@ from anvil.tables import app_tables
 from ..Home import Home
 from ..OurProducts import OurProducts
 from ..MyPurchases import MyPurchases
+from ..About import About
 # This is a module.
 # You can define variables and functions here, and use them from any form. For example, in a top-level form:
 
-urls = {"home": Home, "ourproducts": OurProducts, "my-purchases": MyPurchases}
+urls = {"home": Home, "ourproducts": OurProducts, "my-purchases": MyPurchases, "about": About}
 
 
