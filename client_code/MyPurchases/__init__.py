@@ -15,10 +15,12 @@ from ..Products import Products
 
 class MyPurchases(MyPurchasesTemplate):
   def __init__(self, **properties):
+   
+  
       
     # Set Form properties and Data Bindings.
-      self.init_components(**properties)
-      self.load_products()
+   self.init_components(**properties)
+   self.load_products()
   
 
     # Any code you write here will run before the form opens.
@@ -38,7 +40,7 @@ class MyPurchases(MyPurchasesTemplate):
     
    
     for i, product in enumerate(products):
-      c = Products(name=products["name"], button_text="View Content", description=products["description"], image=products["image"], button_callback=self.render_products)
+      c = Products(name=products['name'], button_text="View Content", description=products["description"], image=products['image'], button_callback=self.render_products)
       products_panel.add_component(c, row=str(i//3), width_xs=4)
 
     self.content_panel.add_component(products_panel)
