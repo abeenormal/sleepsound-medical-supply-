@@ -12,7 +12,7 @@ from anvil.tables import app_tables
 from ..Home import Home
 from ..About import About
 from ..MyPurchases import MyPurchases
-from.urls import urls
+from .urls import urls
 
 class Base(BaseTemplate):
   def __init__(self, **properties):
