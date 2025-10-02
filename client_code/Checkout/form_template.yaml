@@ -13,7 +13,7 @@ components:
     properties: {}
     type: Image
   - layout_properties: {grid_position: 'DUAUEK,HJXUCG'}
-    name: description
+    name: description_label
     properties: {align: center, content: description}
     type: RichText
   layout_properties: {grid_position: 'SPRPNZ,ISTQFV'}
