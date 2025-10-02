@@ -11,8 +11,8 @@ import anvil.server
 # This is a server module. It runs on the Anvil server,
 # rather than in the user's browser.
 @anvil.server.callable
-def get_product_details(name):
-  return app_tables.products.get(name)
+def get_product_details(id_name):
+  return app_tables.products.get(name=id_name)
 
 
 @anvil.server.callable

@@ -1,7 +1,7 @@
 components:
-- layout_properties: {grid_position: 'USSSBV,IVZSWW'}
-  name: label_1
-  properties: {align: center, font_size: 22, text: My Purchases}
-  type: Label
+- layout_properties: {grid_position: 'IQMWTA,DLRXND'}
+  name: content_panel
+  properties: {}
+  type: ColumnPanel
 container: {type: ColumnPanel}
 is_package: true
