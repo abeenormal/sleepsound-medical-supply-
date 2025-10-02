@@ -25,17 +25,20 @@ class MyPurchases(MyPurchasesTemplate):
     self.load_products() 
 
   def render_products(self, id_name):
-    self.content_panel.clear
+    self.content_panel.clear()
+
+  def load_products(self):
+    products = anvil.server.call("get_my_products")
+
+    if len(products)>0:
+      self.no_purchases_label.visible = False
     
  
-    
-  def load_products(self):
-    products = anvil.server.call ("get_all_products").search()
     products_panel = GridPanel()
  
    
     for i, product in enumerate(products):
-      c = Products(name=product["name"], button_text=f"Purchase for ${product['price']}", description=product["description"], image=product["image"], button_callback=self.render_checkout)
+      c = Products(name=product["name"], button_text="View Content", description=product["description"], image=product["image"], button_callback=self.render_products)
       products_panel.add_component(c, row=str(i//3), width_xs=4)
 
     self.content_panel.add_component(products_panel)

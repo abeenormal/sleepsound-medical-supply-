@@ -12,17 +12,25 @@ from anvil.tables import app_tables
 from ..Home import Home
 from ..About import About
 from ..MyPurchases import MyPurchases
+from.urls import urls
 
 class Base(BaseTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    self.go_to_home()
     self.change_sign_in_text()
+    self.handle_urls()
     
 
     # Any code you write here will run before the form opens.
+  def handle_urls(self):
+    url = get_url_hash().lower()
 
+    if url in urls:
+      self.content_panel.clear()
+      self.content_panel.add_component(urls[url]())
+    else:
+      self.go_to_home()
  
   def change_sign_in_text(self):
     user = anvil.users.get_user()

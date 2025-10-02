@@ -9,7 +9,7 @@ components:
 
     type: Label
   - layout_properties: {grid_position: 'IUWEJT,MEFFCC'}
-    name: image
+    name: image_content
     properties: {}
     type: Image
   - layout_properties: {grid_position: 'DUAUEK,HJXUCG'}

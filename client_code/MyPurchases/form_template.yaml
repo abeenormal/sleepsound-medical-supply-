@@ -1,5 +1,10 @@
 components:
-- layout_properties: {grid_position: 'IQMWTA,DLRXND'}
+- components:
+  - layout_properties: {grid_position: 'OFQNMO,EJTILY'}
+    name: no_purchases_label
+    properties: {align: center, bold: true, font_size: 22, text: You don't have any purchases!}
+    type: Label
+  layout_properties: {grid_position: 'IQMWTA,DLRXND'}
   name: content_panel
   properties: {}
   type: ColumnPanel

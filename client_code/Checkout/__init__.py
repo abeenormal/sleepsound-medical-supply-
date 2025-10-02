@@ -15,7 +15,9 @@ import stripe
 class Checkout(CheckoutTemplate):
   def __init__(self, id_name, back_button_callback, **properties):
     self.back_button_callback = back_button_callback
+    
     # Set Form properties and Data Bindings.
+    
     self.init_components(**properties)
     self.update_form(id_name)
     # Any code you write here will run before the form opens.
@@ -42,9 +44,9 @@ class Checkout(CheckoutTemplate):
       alert("You purchased this item!")
       return
 
-    token, info = stripe.checkout.get_token(amount=self.product["price"]*100, currency="USD", title=self.product["name"], description=self.product["description"])
+    token, info = stripe.checkout.get_token(amount=self.products["price"]*100, currency="USD", title=self.products["name"], description=self.products["description"])
     try:
-      anvil.server.call("charge_user", token, user["email"], self.product["id_name"])
+      anvil.server.call("charge_user", token, user["email"], self.products["id_name"])
       alert("Success")
     except Exception as e:
       alert(str(e))
