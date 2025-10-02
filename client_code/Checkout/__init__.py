@@ -1,5 +1,6 @@
 from ._anvil_designer import CheckoutTemplate
 from anvil import *
+import stripe.checkout
 import anvil.google.auth, anvil.google.drive
 from anvil.google.drive import app_files
 import anvil.facebook.auth
@@ -26,12 +27,31 @@ class Checkout(CheckoutTemplate):
     self.price_label.text = f"${products['price']} USD"
     self.image_content.source = products['image']
 
+  def buy_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    if anvil.users.get_user() ==None:
+      anvil.users.login_with_form()
+
+    user = anvil.users.get_user()
+    if user ==None:
+      alert("Please sign in!")
+      return
+
+    if user["purchased_products"]and self.product["id_name"] in user["purchased_products"]:
+      alert("You purchased this item!")
+      return
+
+    token, info = stripe.checkout.get_token(amount=self.product["price"]*100, currency="USD", title=self.product["name"], description=self.product["description"])
+    try:
+      anvil.server.call("charge_user", token, user["email"], self.product["id_name"])
+      alert("Success")
+    except Exception as e:
+      alert(str(e))
+
+
   def back_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     self.back_button_callback()
 
-  def buy_click(self, **event_args):
-    """This method is called when the button is clicked"""
-  pass
 
-  
+

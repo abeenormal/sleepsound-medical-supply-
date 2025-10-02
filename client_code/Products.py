@@ -1,5 +1,6 @@
 from ._anvil_designer import ProductsTemplate
 from anvil import *
+import stripe.checkout
 import anvil.server
 import anvil.google.auth, anvil.google.drive
 from anvil.google.drive import app_files
@@ -30,3 +31,4 @@ class Products(ProductsTemplate):
   def buy_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     pass
+
