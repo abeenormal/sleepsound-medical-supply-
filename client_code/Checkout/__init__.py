@@ -40,7 +40,7 @@ class Checkout(CheckoutTemplate):
       alert("Please sign in!")
       return
 
-    if user["purchased_products"]and self.product["id_name"] in user["purchased_products"]:
+    if user["purchased_products"]and self.products["id_name"] in user["purchased_products"]:
       alert("You purchased this item!")
       return
 
