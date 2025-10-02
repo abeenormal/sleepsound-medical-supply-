@@ -22,7 +22,7 @@ def get_my_products():
   products = []
   for products in user["purchased_products"]:
     product_info = app_tables.products.get(name=products)
-    products.append(product_info)
+    products=products +product_info
     
 
     return products
