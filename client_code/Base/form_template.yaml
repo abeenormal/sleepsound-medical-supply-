@@ -8,7 +8,7 @@ components:
   - event_bindings: {click: my_purchases_click}
     layout_properties: {}
     name: my_purchases
-    properties: {font_size: 20, icon: 'fa:fast-forward', text: My Purchases}
+    properties: {font_size: 20, icon: 'fa:fast-forward', text: My Purchases, visible: false}
     type: Link
   - event_bindings: {click: sign_in_click}
     layout_properties: {}

@@ -4,7 +4,7 @@ db_schema:
     client: none
     columns:
     - admin_ui: {order: 1, width: 200}
-      name: name
+      name: id_name
       type: string
     - admin_ui: {order: 3, width: 200}
       name: description
@@ -19,7 +19,7 @@ db_schema:
       name: image
       type: media
     - admin_ui: {order: 4, width: 200}
-      name: id_name
+      name: name
       type: string
     - admin_ui: {order: 1.125, width: 200}
       name: created
@@ -54,7 +54,7 @@ db_schema:
       name: signed_up
       type: datetime
     - admin_ui: {order: 8, width: 200}
-      name: purchased_products
+      name: user_products
       type: simpleObject
     server: full
     title: Users
@@ -81,5 +81,8 @@ services:
 - client_config: {}
   server_config: {}
   source: /runtime/services/google.yml
+- client_config: {}
+  server_config: {refresh_token: rt_T9ucynKHmqLxeuJO0Czr9RdU7twNxUdQe8Dtx8kZp6FUdDrF, stripe_user_id: acct_1SAYDLKDbscUshAZ}
+  source: /runtime/services/stripe.yml
 startup: {module: Base, type: form}
 startup_form: null
