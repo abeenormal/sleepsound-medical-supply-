@@ -29,7 +29,7 @@ class MyPurchases(MyPurchasesTemplate):
     self.content_panel.clear()
    
 
-  def load_products(self):
+  def load_products(self, user):
     products = anvil.server.call('get_user_products')
 
     
