@@ -30,17 +30,16 @@ class MyPurchases(MyPurchasesTemplate):
    
 
   def load_products(self):
-    products = anvil.server.call('get_my_purchases')
-   
+    products = anvil.server.call('get_user_products')
 
-    if len(products)>0:
-      self.no_purchases_label.visible = False
-
-    products_panel = GridPanel()
     
-   
+    if len(products)> 0: 
+     self.no_purchases_label.visible = False
+
+     products_panel = GridPanel()
+       
     for i, product in enumerate(products):
-      c = Products(name=products['name'], button_text="View Content", description=products["description"], image=products['image'], button_callback=self.render_products)
+      c = Products(name=product['name'], button_text="View Content", description=product['description'], image=products['image'], button_callback=self.render_products,)
       products_panel.add_component(c, row=str(i//3), width_xs=4)
 
     self.content_panel.add_component(products_panel)
