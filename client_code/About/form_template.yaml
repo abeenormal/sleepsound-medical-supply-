@@ -25,5 +25,8 @@ components:
   name: column_panel_1
   properties: {}
   type: ColumnPanel
-container: {type: ColumnPanel}
+container:
+  data_bindings:
+  - {code: 'self.image_1[''clouds'']', property: background, writeback: false}
+  type: ColumnPanel
 is_package: true
