@@ -23,9 +23,11 @@ components:
       padding: ['-30', null, null, null]
   type: FlowPanel
 - components: []
+  data_bindings:
+  - {code: '', property: background, writeback: false}
   layout_properties: {slot: default}
   name: content_panel
-  properties: {background: 'theme:Primary Container', col_widths: '{}'}
+  properties: {background: '', col_widths: '{}', role: background}
   type: ColumnPanel
 - components:
   - layout_properties: {grid_position: 'GDRIFF,PERDSU'}
