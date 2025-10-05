@@ -24,11 +24,24 @@ components:
 - components:
   - layout_properties: {col_xs: 0, row: RJYOLA, width_xs: 3}
     name: rich_text_1
-    properties: {}
+    properties:
+      align: center
+      content: |
+        We are located at:
+        666 DumbDumb Dr.
+        Washington DC, 20500,
+        TRA (Trumps Republic of America)
     type: RichText
   - layout_properties: {col_xs: 9, row: RJYOLA, width_xs: 3}
     name: rich_text_2
-    properties: {}
+    properties:
+      align: center
+      content: |-
+        Please bring ID with Proof of Citizenship,
+        your insurance card, and additional supporting documents. ( We apologize for any inconvenience.)
+        Full payment due at time of purchase.
+        Insurance will be billed after Doctor's citizenship verification process.) Wait times up to 1 year.
+        [Please note: We don't serve immigrants, or other inferior races per Order of the Furor .]
     type: RichText
   - layout_properties: {col_xs: 3, row: OHYNQA, width_xs: 3}
     name: image_2
