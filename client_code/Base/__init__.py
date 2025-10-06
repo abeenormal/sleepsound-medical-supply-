@@ -13,9 +13,12 @@ from ..Home import Home
 from ..About import About
 from ..MyPurchases import MyPurchases
 from .urls import urls
+from ..Footer import Footer
+
 
 class Base(BaseTemplate):
   def __init__(self, **properties):
+ 
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     self.change_sign_in_text()
@@ -23,6 +26,9 @@ class Base(BaseTemplate):
     
 
     # Any code you write here will run before the form opens.
+    self.background = 'url("_/theme/clouds.png")'
+   
+    
   def handle_urls(self):
     url = get_url_hash().lower()
 

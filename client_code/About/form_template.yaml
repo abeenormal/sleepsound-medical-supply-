@@ -7,23 +7,39 @@ components:
 - components:
   - layout_properties: {grid_position: 'ZTMPQN,DPPNUK'}
     name: image_1
-    properties: {source: _/theme/Sleeplogo.png}
+    properties: {background: 'theme:Primary', source: _/theme/Sleeplogo.png}
     type: Image
-  - layout_properties: {grid_position: 'DZBWWD,OELAXW'}
+  - layout_properties: {grid_position: 'PTIQLF,YJXLII'}
     name: label_1
-    properties: {align: center, bold: true, border: 'bottom, 20pt', font: '', font_size: 30, italic: true, text: Who We Are and What We Do}
+    properties: {align: center, bold: true, border: 'bottom, 20pt', font: '', font_size: 30, foreground: 'theme:Primary', italic: true, role: null, text: Who We Are and What We Do}
     type: Label
+  - layout_properties: {grid_position: 'PHTEOQ,APKQST'}
+    name: image_2
+    properties: {display_mode: zoom_to_fill, source: _/theme/lady_cpap.png}
+    type: Image
   - components: []
-    layout_properties: {grid_position: 'PSGZPM,OYKUSK'}
+    data_bindings: []
+    layout_properties: {grid_position: 'XTDSMP,LFLNVW'}
     name: rich_text_2
     properties:
       align: center
+      border: 10px solid
       content: "Welcome to SleepSound — Your Local Sleep Wellness Partner\n We are glad you are here! \nWe all need good sleep, for energy, restoration, and balance. Here at Sleep Sound, we know every person has different needs based on different sleep positions, and personal preferences for comfort. \n\nWe’re a locally owned store specializing in CPAP, BiPAP, and oxygen machines, along with all the essential accessories. We accept most private insurance plans and select Medicare Advantage plans.\n\nAt SleepSound, we tailor your experience with the help of a dedicated sleep coach who offers personalized recommendations based on your unique sleep style. For added peace of mind, we provide an emergency contact line should any issues arise.\n\nNeed support fast? We offer overnight delivery to ensure you never miss a night of restful sleep. Plus, every product comes with a 30-day satisfaction guarantee—because better sleep starts with the right support."
       font_size: 20
+      foreground: theme:Primary
+      role: null
     type: RichText
+  data_bindings: []
   layout_properties: {grid_position: 'BLOWEX,MJRQLU'}
   name: column_panel_1
-  properties: {}
+  properties: {role: null}
   type: ColumnPanel
-container: {type: ColumnPanel}
+- layout_properties: {grid_position: 'KPBFZW,FCZFMR'}
+  name: footer_1
+  properties: {}
+  type: form:Footer
+container:
+  data_bindings: []
+  properties: {background: ''}
+  type: ColumnPanel
 is_package: true

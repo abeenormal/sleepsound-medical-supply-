@@ -2,47 +2,72 @@ components:
 - components:
   - layout_properties: {grid_position: 'LAFUUQ,QXOAWH', row_background: 'theme:Primary Container'}
     name: image
-    properties: {display_mode: zoom_to_fill, height: 472.5999755859375, source: _/theme/SleepSound.png}
+    properties: {background: 'theme:Primary', display_mode: zoom_to_fill, height: 451.3999938964844, source: _/theme/SleepSound.png}
     type: Image
-  - layout_properties: {grid_position: 'UDNBGU,PGDLJY', row_background: 'theme:Primary Container'}
+  - components:
+    - event_bindings: {click: button_click}
+      name: button
+      properties: {background: 'theme:Primary', bold: true, font_size: 22, foreground: '', italic: true, role: filled-button, text: Check out our products!}
+      type: Button
+    - components:
+      - layout_properties: {grid_position: 'XPYCSA,OVWUJC'}
+        name: image_2
+        properties: {display_mode: zoom_to_fill, height: 440.79998779296875, source: _/theme/lady_cpap.png}
+        type: Image
+      - layout_properties: {grid_position: 'MOFQIS,VIJHSV'}
+        name: five_stars_1
+        properties: {}
+        type: form:Five_stars
+      - components: []
+        data_bindings: []
+        layout_properties: {grid_position: 'DRLESA,XEKBPY'}
+        name: reviews
+        properties:
+          align: center
+          background: theme:Primary Container
+          border: '20'
+          content: "Reviews:\n\"I received the best care. They knew exactly what I needed, and I slept well that same night!\"\n-Denea Brown\n\n\"When my mask leaked all night, they replaced the mask with a different size. It made all the difference in the world! I would recommend them to anyone needing sleep.\"\n-Brian Jackson\n\n\"I tried other medical supply stores, and never got the support I needed. They know what you need and have excellent knowledge of sleep apnea.\" Excellent!\n-Vera Bloom \n"
+          font_size: 20
+          foreground: theme:Primary
+          format: plain_text
+        type: RichText
+      name: content_panel2
+      properties: {role: elevated-card}
+      type: ColumnPanel
+    layout_properties: {full_width_row: false, grid_position: 'ODONOJ,VLPJJH'}
     name: description
     properties:
       align: center
-      content: "Welcome! We have all your medically necessary supplies for you to sleep sound! \nFeel free to check out our products."
+      background: theme:Primary Container
+      content: |2+
+
+        Feel free to check out our products.
+
       font_size: 23
+      foreground: theme:Primary
       format: markdown
+      spacing:
+        margin: ['0', null, '0', null]
     type: RichText
   layout_properties: {grid_position: 'VVNQYV,UVYRHY'}
   name: content_panel
-  properties: {}
+  properties: {role: elevated-card}
   type: ColumnPanel
-- event_bindings: {click: button_click}
-  layout_properties: {grid_position: 'YIKMNU,WOHSKD'}
-  name: button
-  properties: {bold: true, font_size: 22, italic: true, role: filled-button, text: Check out our products!}
-  type: Button
 - components:
-  - layout_properties: {col_xs: 0, row: RJYOLA, width_xs: 3}
-    name: rich_text_1
+  - data_bindings:
+    - {code: '', property: text, writeback: false}
+    layout_properties: {col_xs: 0, row: UNVFZS, width_xs: 12}
+    name: footer
     properties: {}
-    type: RichText
-  - layout_properties: {col_xs: 9, row: RJYOLA, width_xs: 3}
-    name: rich_text_2
-    properties: {}
-    type: RichText
-  - layout_properties: {col_xs: 3, row: OHYNQA, width_xs: 3}
-    name: image_2
-    properties: {}
-    type: Image
-  - layout_properties: {col_xs: 6, row: OHYNQA, width_xs: 3}
-    name: image_1
-    properties: {}
-    type: Image
-  layout_properties: {grid_position: 'SYGBNC,PWGQVI'}
+    type: form:Footer
+  layout_properties: {grid_position: 'SNQYZO,KOZMCF'}
   name: grid_panel_1
-  properties: {}
+  properties: {role: Footer}
   type: GridPanel
 container:
-  properties: {background: 'theme:Primary Container'}
+  properties:
+    background: ''
+    spacing:
+      padding: [null, null, null, '0']
   type: ColumnPanel
 is_package: true

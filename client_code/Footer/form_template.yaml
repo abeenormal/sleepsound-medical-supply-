@@ -1,0 +1,57 @@
+components:
+- components:
+  - layout_properties: {}
+    name: address
+    properties:
+      role: null
+      spacing:
+        padding: [null, '60', null, '30']
+      text: |
+        We are located at:
+        1212 Sleepland Way
+        Brentwood, Tn 37064
+    type: Label
+  - name: insurance
+    properties:
+      align: left
+      spacing:
+        padding: ['8', null, '8', '80']
+      text: |
+        Please bring ID with Proof of Citizenship,
+         and your insurance card.
+    type: Label
+  - layout_properties: {}
+    name: phone
+    properties:
+      spacing:
+        padding: [null, '60', null, '90']
+      text: |-
+        Phone: 615-666-7777
+        Emergencys: 888-623-3366
+         www.SleepSound.com
+    type: Label
+  data_bindings: []
+  event_bindings: {}
+  layout_properties: {full_width_row: true, grid_position: 'SYQIYI,HAWSEO'}
+  name: footer
+  properties:
+    align: justify
+    background: theme:Primary Container
+    border: '10px Solid '
+    foreground: theme:Primary
+    gap: medium
+    role: Footer
+    spacing:
+      margin: ['4', null, null, null]
+      padding: [null, null, null, '10']
+    spacing_above: large
+  type: FlowPanel
+container:
+  data_bindings: []
+  event_bindings: {refreshing_data_bindings: form_refreshing_data_bindings}
+  properties: {col_spacing: medium, role: Footer, spacing_above: large}
+  type: ColumnPanel
+custom_component: true
+is_package: true
+properties: []
+toolbox_item: {title: Footer}
