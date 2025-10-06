@@ -331,3 +331,7 @@ roles:
 - components: [Page]
   display_in_toolbox: false
   name: Background
+- components: []
+  display_in_toolbox: true
+  name: Footer
+  title: Footer

@@ -157,6 +157,49 @@ color: %color:On Primary Container%;
   padding-top: 0;
   padding-bottom: 0;
 }
+/* Footer bar */
+.footer {
+  font-size: 20px;
+  font-weight: 500;
+  background-color:  %color:Primary 500%;;
+  color: lightpurple;
+  min-height: 66px;
+  /*   height: 66px; */
+  text-align: center;
+  padding: 0 72px 0 72px;
+  z-index: 1;
+  box-shadow: 0 -4px 5px 0 rgba(0, 0, 0, 0.14), 0 -1px 10px 0 rgba(0, 0, 0, 0.12), 0 -2px 4px -1px rgba(0, 0, 0, 0.2);    
+}
+
+.footer > .footer-slot > .placeholder { outline: 1px dotted; padding-left: 16px; padding-right: 16px; margin-top: 12px; display:none; }
+.anvil-highlight .footer > .footer-slot > .placeholder { display:block; }
+
+.content > div:first-child{
+  /*  adjusted for the footer  */
+  min-height: calc(100vh - 130px);
+}
+
+.footer a, .footer a.anvil-component {
+  padding: 5px;
+  /*   margin: 8px 0 0; */
+  border-radius: 20px;
+}
+
+footer a, .footer .anvil-component {
+  display: block;
+  color: white;
+  line-height: 30px;
+  min-width: 30px;
+  min-height: 30px;
+  margin: 4px 0;
+}
+.footer a:hover, .footer a:active {
+  color: #eee; text-decoration: none;
+  background-color: %color:Primary 700%;
+}
+.footer a .link-text {
+  padding: 0 4px;
+}
 
 .anvil-role-quickfooter {
   position: fixed;
@@ -167,6 +210,17 @@ color: %color:On Primary Container%;
   color: white;
   padding: 10px;
   text-align: center;
+}
+.anvil-role-footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  /* Add other styling as needed, e.g., background-color, color, padding */
+  background-color: #333; /* Example background color */
+  color: lightpurple; /* Example text color */
+  padding: 10px; /* Example padding */
+  text-align: center; /* Example text alignment */
 }
 
 
