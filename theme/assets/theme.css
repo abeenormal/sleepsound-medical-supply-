@@ -102,7 +102,10 @@ body {
   font-size: 14px;
   line-height: 1.4286;
   color: %color:On Surface%;
-  background-color: %color:Background%;
+  background-image: url('_/theme/clouds.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   min-height: calc(100vh - 56px)
 }
 
@@ -154,6 +157,18 @@ color: %color:On Primary Container%;
   padding-top: 0;
   padding-bottom: 0;
 }
+
+.anvil-role-quickfooter {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #555;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
 
 /* Page structure: App bar with optional left nav */
 .structure {

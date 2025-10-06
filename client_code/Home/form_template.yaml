@@ -2,13 +2,21 @@ components:
 - components:
   - layout_properties: {grid_position: 'LAFUUQ,QXOAWH', row_background: 'theme:Primary Container'}
     name: image
-    properties: {display_mode: zoom_to_fill, height: 472.5999755859375, source: _/theme/SleepSound.png}
+    properties: {background: '#EADDFF', display_mode: zoom_to_fill, height: 472.5999755859375, source: _/theme/SleepSound.png}
     type: Image
-  - layout_properties: {grid_position: 'UDNBGU,PGDLJY', row_background: 'theme:Primary Container'}
+  - components:
+    - event_bindings: {click: button_click}
+      name: button
+      properties: {background: 'theme:Primary', bold: true, font_size: 22, foreground: '', italic: true, role: filled-button, text: Check out our products!}
+      type: Button
+    layout_properties: {grid_position: 'ODONOJ,VLPJJH'}
     name: description
     properties:
       align: center
-      content: "Welcome! We have all your medically necessary supplies for you to sleep sound! \nFeel free to check out our products."
+      content: |2+
+
+        Feel free to check out our products.
+
       font_size: 23
       format: markdown
     type: RichText
@@ -16,24 +24,22 @@ components:
   name: content_panel
   properties: {}
   type: ColumnPanel
-- event_bindings: {click: button_click}
-  layout_properties: {grid_position: 'YIKMNU,WOHSKD'}
-  name: button
-  properties: {bold: true, font_size: 22, italic: true, role: filled-button, text: Check out our products!}
-  type: Button
 - components:
   - layout_properties: {col_xs: 0, row: GQPHFX, width_xs: 6}
     name: image_2
-    properties: {display_mode: fill_width, height: 290.20001220703125, source: _/theme/lady_cpap.png}
+    properties: {display_mode: zoom_to_fill, height: 440.79998779296875, source: _/theme/lady_cpap.png}
     type: Image
-  - layout_properties: {col_xs: 6, row: GQPHFX, width_xs: 6}
+  - components: []
+    layout_properties: {col_xs: 6, row: GQPHFX, width_xs: 6}
     name: rich_text_3
     properties:
       align: center
+      border: '20'
       content: "Reviews:\n\"I received the best care. They knew exactly what I needed, and I slept well that same night!\"\n-Denea Brown\n\n\"When my mask leaked all night, they replaced the mask with a different size. It made all the difference in the world! I would recommend them to anyone needing sleep.\"\n-Brian Jackson\n\n\"I tried other medical supply stores, and never got the support I needed. They know what you need and have excellent knowledge of sleep apnea.\" Excellent!\n-Vera Bloom \n"
-      foreground: theme:On Primary
+      font_size: 20
+      foreground: ''
     type: RichText
-  - layout_properties: {col_xs: 0, row: DXYPLL, width_xs: 3}
+  - layout_properties: {col_xs: 0, row: ONIWWC, width_xs: 6}
     name: rich_text_1
     properties:
       align: center
@@ -45,24 +51,18 @@ components:
         Hours: 8am-4pm Mon.-Fri
         Phone: 615-666-7777
         Emergencys: 888-623-3366
-
-        www.SleepSound.com
-      foreground: theme:On Primary
-    type: RichText
-  - layout_properties: {col_xs: 3, row: DXYPLL, width_xs: 3}
-    name: rich_text_2
-    properties:
-      align: center
-      content: |
         Please bring ID with Proof of Citizenship, and
         your insurance card.
-      foreground: theme:On Primary
+        www.SleepSound.com
+      font_size: 17
+      foreground: ''
+      format: markdown
     type: RichText
   layout_properties: {grid_position: 'SYGBNC,PWGQVI'}
   name: grid_panel_1
   properties: {}
   type: GridPanel
 container:
-  properties: {background: '#b19bd4'}
+  properties: {background: ''}
   type: ColumnPanel
 is_package: true

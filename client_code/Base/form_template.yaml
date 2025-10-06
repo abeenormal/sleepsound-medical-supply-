@@ -22,7 +22,35 @@ components:
       margin: ['10', null, null, null]
       padding: ['-30', null, null, null]
   type: FlowPanel
-- components: []
+- components:
+  - components:
+    - layout_properties: {}
+      name: label_2
+      properties:
+        font: ''
+        font_size: 17
+        text: |-
+          We are located at:
+          1212 Sleepland Way
+          Brentwood, Tn 37064
+      type: Label
+    - layout_properties: {}
+      name: label_1
+      properties:
+        align: center
+        bold: true
+        font_size: 17
+        text: |-
+          Please bring ID with Proof of Citizenship, and
+          your insurance card.
+          www.SleepSound.com
+      type: Label
+    data_bindings:
+    - {code: 'self.item[''quickfooter'']', property: role, writeback: false}
+    layout_properties: {grid_position: 'CPTHON,LYANSQ'}
+    name: flow_panel_1
+    properties: {}
+    type: FlowPanel
   data_bindings:
   - {code: '', property: background, writeback: false}
   layout_properties: {slot: default}
@@ -52,6 +80,9 @@ components:
       padding: [null, '50', null, '20']
   type: Link
 container:
-  properties: {background: '', border: '10', html: '@theme:standard-page.html', role: null}
+  data_bindings:
+  - {code: '', property: background, writeback: false}
+  - {code: '', property: item, writeback: false}
+  properties: {background: '', border: '10', html: '@theme:standard-page.html', role: null, visible: true}
   type: HtmlTemplate
 is_package: true
