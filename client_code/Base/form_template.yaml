@@ -27,7 +27,7 @@ components:
   - {code: '', property: background, writeback: false}
   layout_properties: {slot: default}
   name: content_panel
-  properties: {background: '', col_widths: '{}', role: background}
+  properties: {background: '', col_widths: '{}', role: null}
   type: ColumnPanel
 - components:
   - layout_properties: {grid_position: 'GDRIFF,PERDSU'}
