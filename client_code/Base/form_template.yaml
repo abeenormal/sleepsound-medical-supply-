@@ -34,7 +34,7 @@ components:
     name: home
     properties:
       alt_text: return home
-      background: theme:Primary Container
+      background: ''
       height: 31
       margin: ['0', null, null, null]
       source: _/theme/Sleeplogo.png
@@ -46,7 +46,7 @@ components:
   name: title
   properties:
     align: left
-    icon: fa:cloud
+    icon: 'fa:'
     icon_align: top
     role: null
     spacing:
