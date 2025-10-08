@@ -27,7 +27,9 @@ class MyPurchases(MyPurchasesTemplate):
 
   def render_products(self, id_name):
     self.content_panel.clear()
-   
+    
+
+  
 
   def load_products(self):
     products = anvil.server.call("get_user_products")
@@ -38,7 +40,11 @@ class MyPurchases(MyPurchasesTemplate):
       products_panel = GridPanel()
        
       for i, product in enumerate(products):
-        c = Products(name=product["name"], button_text="Back", description=product["description"], image=product["image"], button_callback=self.render_products,)
+        c = Products(name=product["id_name"], button_text="Back", description=product["description"], image=product["image"], button_callback=self.render_products,)
       products_panel.add_component(c, row=str(i//3), width_xs=4)
 
     self.content_panel.add_component(products_panel)
+
+   
+
+    
