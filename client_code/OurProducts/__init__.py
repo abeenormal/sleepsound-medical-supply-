@@ -17,10 +17,8 @@ class OurProducts(OurProductsTemplate):
 
     
     # Set Form properties and Data Bindings.
-    self.init_components(**properties)
-    self.load_products()
-
-    
+     self.init_components(**properties)
+     self.load_products()
     # Any code you write here will run before the form opens.
   def back(self):
     self.content_panel.clear()
@@ -31,11 +29,11 @@ class OurProducts(OurProductsTemplate):
     self.content_panel.add_component(Checkout(id_name, self.back))
 
   def load_products(self):
-    products = anvil.server.call ("get_all_products").search()
+    products = anvil.server.call("get_all_products").search()
     products_panel = GridPanel()
 
     for i, product in enumerate(products):
-      c = Products(id_name=product["id_name"], button_text=f"Purchase for ${product['price']}", description=product["description"], image=product["image"], button_callback=self.render_checkout)
+      c = Products(id_name=products["name"], button_text=f"Purchase for ${product['price']}", description=product["description"], image=product["image"], button_callback=self.render_checkout)
       products_panel.add_component(c, row=str(i//3), width_xs=4)
 
     self.content_panel.add_component(products_panel)
