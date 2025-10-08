@@ -81,3 +81,5 @@ class Base(BaseTemplate):
     """This method is called when the link is clicked"""
     self.content_panel.clear()
     self.content_panel.add_component(About())
+
+    self.refresh_data_bindings()
