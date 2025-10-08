@@ -22,5 +22,5 @@ def charge_user(token,email,product_name):
   if product_name in user["user_products"]:
     return
     
-  result = stripe_customer.charge(amount=price*100, currency="USD")
+    result = stripe_customer.charge(amount=price*100, currency="USD")
   user ["user_products"] = user["user_products"] + [product_name]

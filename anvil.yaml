@@ -1,10 +1,5 @@
 allow_embedding: false
 db_schema:
-  orders:
-    client: none
-    columns: []
-    server: full
-    title: Orders
   products:
     client: none
     columns:
