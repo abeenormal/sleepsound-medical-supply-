@@ -28,9 +28,10 @@ class MyPurchases(MyPurchasesTemplate):
   
     
   
-  def render_products(self):
+  def render_products(self, products_panel):
     self.content_panel.clear()
-   
+    self.content_panel.add_component(Home())
+  
     
  
   def load_products(self):
