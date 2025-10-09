@@ -60,8 +60,8 @@ db_schema:
     title: Users
 dependencies: []
 metadata: {description: SleepSound provides CPAP and other medical supplies for a better night's sleep., title: SleepSound}
-name: 'SleepSound Medical Supply '
-package_name: SleepSound_Medical_Supply_
+name: 'SleepSound Medical Supply #1'
+package_name: SleepSound_Medical_Supply__1
 renamed: true
 runtime_options:
   client_version: '3'
