@@ -10,27 +10,29 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 from ..Products import Products
+from ..Home import Home
 
 
 
 class MyPurchases(MyPurchasesTemplate):
   def __init__(self, **properties):
    
-  
-      
+       
     # Set Form properties and Data Bindings.
    self.init_components(**properties)
    self.load_products()
   
 
+  
     # Any code you write here will run before the form opens.
-
+  
+    
+  
   def render_products(self, id_name):
     self.content_panel.clear()
+   
     
-
-  
-
+ 
   def load_products(self):
     products = anvil.server.call("get_user_products")
 
@@ -45,7 +47,8 @@ class MyPurchases(MyPurchasesTemplate):
       
       self.content_panel.add_component(products_panel)
     
-
+ 
+  
    
 
     

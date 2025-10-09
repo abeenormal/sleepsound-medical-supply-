@@ -21,8 +21,8 @@ def get_user_products():
       return []
 
   products = []
-  for products in user["user_products"]:
-    product_info = app_tables.products.get(id_name=products)
+  for product in user["user_products"]:
+    product_info = app_tables.products.get(id_name=product)
     products.append(product_info)
 
     return products
