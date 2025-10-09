@@ -28,7 +28,7 @@ class MyPurchases(MyPurchasesTemplate):
   
     
   
-  def render_products(self, id_name):
+  def render_products(self):
     self.content_panel.clear()
    
     
