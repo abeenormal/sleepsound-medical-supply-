@@ -25,7 +25,7 @@ class Checkout(CheckoutTemplate):
   def update_form(self, id_name):
     products = anvil.server.call('get_product_details', id_name)
     self.products = products
-    self.name_label.content = products[id_name]
+    self.name_label.content = products['id_name']
     self.description_label.text = products['description']
     self.price_label.text = f"${products['price']} USD"
     self.image_content.source = products['image']
