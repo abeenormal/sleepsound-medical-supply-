@@ -1,5 +1,16 @@
 allow_embedding: false
 db_schema:
+  orders:
+    client: none
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: charge_id
+      type: string
+    - admin_ui: {order: 1, width: 200}
+      name: order
+      type: simpleObject
+    server: full
+    title: Orders
   products:
     client: none
     columns:
