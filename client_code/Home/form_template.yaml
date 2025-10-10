@@ -14,10 +14,6 @@ components:
         name: image_2
         properties: {display_mode: zoom_to_fill, height: 440.79998779296875, source: _/theme/lady_cpap.png}
         type: Image
-      - layout_properties: {grid_position: 'MOFQIS,VIJHSV'}
-        name: five_stars_1
-        properties: {}
-        type: form:Five_stars
       - components: []
         data_bindings: []
         layout_properties: {grid_position: 'DRLESA,XEKBPY'}

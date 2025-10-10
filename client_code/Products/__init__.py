@@ -22,18 +22,15 @@ class Products(ProductsTemplate):
     self.description_label.content = description
     self.image_content.source = image
    
-    
-
-    # Any code you write here will run before the form opens.
-
-  def add_button_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    save_clicked = alert(content=AddToCart(item=self.item))
+        # Any code you write here will run before the form opens.
 
   def back_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    self.content_panel.add_component(ProductsTemplate)
-    
+    self.content_panel.add_component(Products())
+
+  def button_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    save_clicked = alert(content=AddToCart(item=self.item))    
 
 
 

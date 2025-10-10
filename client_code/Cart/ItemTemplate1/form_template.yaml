@@ -1,48 +1,42 @@
 components:
-- components: []
-  layout_properties: {grid_position: 'BZJEIR,ZXHKEX'}
-  name: column_panel_1
-  properties: {col_widths: '{}'}
-  type: ColumnPanel
 - data_bindings:
   - {code: 'self.item[''product''][''img'']', property: source, writeback: false}
-  layout_properties: {grid_position: 'EKSFKN,SFAURO VGLOYR,TWTZIN'}
+  layout_properties: {grid_position: 'VGLOYR,TWTZIN'}
   name: image_1
   properties: {height: 140.39999389648438}
   type: Image
 - data_bindings:
   - {code: 'self.item[''product''][''name'']', property: text, writeback: false}
-  layout_properties: {grid_position: 'EKSFKN,SFAURO VGLOYR,YJUOJB HBDUOV,TLWTQZ'}
+  layout_properties: {grid_position: 'VGLOYR,YJUOJB HBDUOV,TLWTQZ'}
   name: label_1
   properties: {font_size: 16, text: '', visible: true}
   type: Label
 - data_bindings:
   - {code: 'f"${self.item[''product''][''price'']} each"', property: text, writeback: false}
-  layout_properties: {grid_position: 'EKSFKN,SFAURO VGLOYR,YJUOJB XKCPKD,AJZYHH'}
+  layout_properties: {grid_position: 'VGLOYR,YJUOJB XKCPKD,AJZYHH'}
   name: label_2
-  properties: {underline: true}
+  properties: {font_size: 16, underline: false}
   type: Label
 - data_bindings:
   - {code: 'f"qty. {self.item[''quantity'']}"', property: text, writeback: false}
-  layout_properties: {grid_position: 'EKSFKN,SFAURO VGLOYR,YJUOJB TIDVZQ,IFGPIN'}
+  layout_properties: {grid_position: 'VGLOYR,YJUOJB TIDVZQ,IFGPIN'}
   name: label_3
-  properties: {}
+  properties: {font_size: 16}
   type: Label
-- layout_properties: {grid_position: 'EKSFKN,SFAURO VGLOYR,NVTAYB PEUVBL,YZLHDA'}
+- data_bindings:
+  - {code: 'f"${self.item[''product''][''price''] * self.item[''quantity'']}"', property: text, writeback: false}
+  layout_properties: {grid_position: 'VGLOYR,NVTAYB PEUVBL,YZLHDA'}
   name: total_label
-  properties: {}
+  properties: {font_size: 16}
   type: Label
-- layout_properties: {grid_position: 'EKSFKN,SFAURO VGLOYR,NVTAYB UVHPYZ,ALNQGX'}
+- layout_properties: {grid_position: 'VGLOYR,NVTAYB UVHPYZ,ALNQGX'}
   name: delete_button
   properties: {font_size: 24, icon: 'fa:trash-o', text: ''}
   type: Button
-- layout_properties: {grid_position: 'YVYOXV,XAFMVG'}
-  name: spacer_2
-  properties: {height: 32}
-  type: Spacer
 container:
   properties:
-    col_widths: '{"SFAURO":27,"IGQAJF":1,"TWTZIN":20,"YJUOJB":30}'
+    border: solid, purple
+    col_widths: '{"SFAURO":27,"TWTZIN":20,"YJUOJB":30}'
     spacing:
       padding: ['8', null, '8', null]
   type: ColumnPanel
