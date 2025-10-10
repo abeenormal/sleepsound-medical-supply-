@@ -4,6 +4,7 @@ components:
     name: name_label
     properties:
       align: center
+      font_size: null
       text: |+
         name
 
@@ -21,7 +22,7 @@ components:
     properties:
       align: center
       bold: true
-      font_size: 45
+      font_size: null
       text: |
         919.00
     type: Label
@@ -61,8 +62,21 @@ components:
   - event_bindings: {click: buy_click}
     layout_properties: {grid_position: 'NQFUYE,QTPZUW'}
     name: buy
-    properties: {bold: true, font_size: 40, role: tonal-button, text: Buy Now!}
+    properties: {bold: true, font_size: null, role: tonal-button, text: Buy Now!, visible: false}
     type: Button
+  - components:
+    - layout_properties: {}
+      name: add_button
+      properties: {background: '#a181d5', role: filled-button, text: Add to Cart}
+      type: Button
+    - layout_properties: {}
+      name: added_button
+      properties: {background: '#5e87d9', role: filled-button, text: Added}
+      type: Button
+    layout_properties: {grid_position: 'ALRRVL,TFBIGQ'}
+    name: flow_panel_1
+    properties: {align: center}
+    type: FlowPanel
   layout_properties: {grid_position: 'SPRPNZ,CPWRNK'}
   name: column_panel_2
   properties: {role: elevated-card}
