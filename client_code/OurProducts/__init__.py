@@ -29,12 +29,14 @@ class OurProducts(OurProductsTemplate):
     self.content_panel.add_component(Checkout(id_name, self.back))
 
   def load_products(self):
-    products = anvil.server.call("get_all_products").search()
+    anvil.server.call("get_all_products").search()
     products_panel = GridPanel()
 
-    for i, product in enumerate(products):
+    for i, product in enumerate(Products):
       c = Products(name=product["name"], button_text=f"Purchase for ${product['price']}", description=product["description"], image=product["image"], button_callback=self.render_checkout)
-      products_panel.add_component(c, row=str(i//3), width_xs=4)
+      products_panel.add_component(c, row=str(i//2), width_xs=6)
+      
+ 
 
     self.content_panel.add_component(products_panel)
 

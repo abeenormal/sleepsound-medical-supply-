@@ -15,7 +15,7 @@ components:
     name: spacer_1
     properties: {height: 65.19998168945312}
     type: Spacer
-  layout_properties: {grid_position: 'ETSGGD,NUULLO'}
+  layout_properties: {full_width_row: true, grid_position: 'ETSGGD,NUULLO'}
   name: empty_cart_panel
   properties: {}
   type: ColumnPanel
