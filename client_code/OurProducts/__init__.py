@@ -12,9 +12,10 @@ from anvil.tables import app_tables
 from ..Products import Products
 from ..Checkout import Checkout
 
+
 class OurProducts(OurProductsTemplate):
   def __init__(self, **properties):
-
+     
     
     # Set Form properties and Data Bindings.
      self.init_components(**properties)
@@ -33,8 +34,8 @@ class OurProducts(OurProductsTemplate):
     products_panel = GridPanel()
 
     for i, product in enumerate(products):
-      c = Products(name=product["name"], button_text=f"Purchase for ${product['price']}", description=product["description"], image=product["image"], button_callback=self.render_checkout)
-      products_panel.add_component(c, row=str(i//2), width_xs=6)
+      c = Products(name=product["id_name"], button_text=f"Purchase for ${product['price']}", description=product["description"], image=product["image"], button_callback=self.render_checkout)
+      products_panel.add_component(c, row=str(i//3), width_xs=4)
       
     self.content_panel.add_component(products_panel)
 

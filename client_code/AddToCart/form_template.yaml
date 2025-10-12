@@ -26,7 +26,8 @@ components:
       text: |
         919.00
     type: Label
-  - layout_properties: {grid_position: 'NXZWUB,UAZKZN'}
+  - event_bindings: {pressed_enter: quantity_box_pressed_enter}
+    layout_properties: {grid_position: 'NXZWUB,UAZKZN'}
     name: quantity_box
     properties: {type: number}
     type: TextBox

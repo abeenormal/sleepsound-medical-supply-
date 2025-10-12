@@ -51,3 +51,5 @@ class AddToCart(AddToCartTemplate):
     self.add_button.visible = True
     self.added_button.visible = False
     self.timer_1.interval = 0
+
+

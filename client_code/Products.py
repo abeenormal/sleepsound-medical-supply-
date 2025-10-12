@@ -11,28 +11,22 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 
 
-
-
 class Products(ProductsTemplate):
-  def __init__(self,name,description,add_button_text,image,button_callback, **properties):
+  def __init__(self,name,button_text,description,image,button_callback, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     self.name_label.content = name
+    self.button_text = button_text
     self.description_label.content = description
-    self.button.text= button_text
     self.image_content.source = image
     self.button_callback = button_callback
    
         # Any code you write here will run before the form opens.
 
-  def back_button_click(self, **event_args):
+  
+  def button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    self.back_button_callback()
-
-  def add_button_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    self.item = self.item.get_id()
-    anvil.server.call('add_order'), ite
+    self.button_callback(self.name_label.content.lower())
 
 
 
