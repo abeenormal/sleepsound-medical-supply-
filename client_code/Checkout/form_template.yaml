@@ -33,7 +33,7 @@ components:
     properties: {bold: true, font_size: null, role: tonal-button, text: Buy Now!, visible: true}
     type: Button
   layout_properties: {full_width_row: true, grid_position: 'SPRPNZ,ISTQFV'}
-  name: column_panel_1
+  name: content_panel
   properties: {role: elevated-card}
   type: ColumnPanel
 - components:
