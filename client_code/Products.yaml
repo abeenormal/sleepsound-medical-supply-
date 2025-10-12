@@ -40,4 +40,4 @@ properties:
 - {important: true, name: button_callback, type: object}
 - {default_value: '', important: true, name: description, type: string}
 - {default_value: '', important: true, name: button_text, type: string}
-toolbox_item: {hidden: false, title: Product_panel}
+toolbox_item: {hidden: true}
