@@ -17,7 +17,8 @@ components:
         description
       font_size: 20
     type: RichText
-  - event_bindings: {click: button_click}
+  - data_bindings: []
+    event_bindings: {click: button_click}
     layout_properties: {grid_position: 'MXPRXM,HBMVWV'}
     name: button
     properties:
