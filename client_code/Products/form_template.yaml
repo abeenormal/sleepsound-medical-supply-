@@ -22,7 +22,7 @@ components:
     name: button
     properties:
       background: theme:Primary
-      bold: false
+      bold: true
       font_size: 20
       role: tonal-button
       text: |
