@@ -16,7 +16,7 @@ class Products(ProductsTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     self.name_label.content = name
-    self.button_text = button_text
+    self.button.text = button_text
     self.description_label.content = description
     self.image_content.source = image
     self.button_callback = button_callback
