@@ -21,7 +21,7 @@ components:
     properties:
       align: center
       bold: true
-      font_size: 45
+      font_size: 22
       text: |
         919.00
     type: Label
