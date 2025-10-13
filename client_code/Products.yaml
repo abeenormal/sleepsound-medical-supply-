@@ -13,18 +13,22 @@ components:
     name: description_label
     properties: {align: center, content: description, font_size: 20}
     type: RichText
-  - data_bindings: []
-    event_bindings: {click: button_click}
-    layout_properties: {grid_position: 'MXPRXM,HBMVWV'}
-    name: button
-    properties:
-      background: theme:Primary
-      bold: true
-      font_size: 20
-      role: filled-button
-      text: |2+
+  - components:
+    - data_bindings: []
+      event_bindings: {click: button_click}
+      name: button
+      properties:
+        background: theme:Primary
+        bold: true
+        font_size: 20
+        role: filled-button
+        text: |2+
 
-    type: Button
+      type: Button
+    layout_properties: {grid_position: 'OIDYZE,PGUXTI'}
+    name: button_label
+    properties: {}
+    type: RichText
   layout_properties: {grid_position: 'CQNLFN,FGGXAK'}
   name: content_panel
   properties: {background: 'theme:Primary Container', border: '10px solid ', foreground: 'theme:Primary', role: elevated-card}
@@ -39,5 +43,5 @@ properties:
 - {important: true, name: image, type: object}
 - {important: true, name: button_callback, type: object}
 - {default_value: '', important: true, name: description, type: string}
-- {default_value: '', important: true, name: button_text, type: string}
+- {important: true, name: button_text, type: object}
 toolbox_item: {hidden: true}
