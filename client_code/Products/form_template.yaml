@@ -43,4 +43,5 @@ properties:
 - {important: true, name: image, type: object}
 - {important: true, name: button_callback, type: object}
 - {default_value: '', important: true, name: description, type: string}
-- {default_value: '', important: true, name: button_text, type: string}
+- {important: true, name: button_text, type: object}
+toolbox_item: {hidden: true}
