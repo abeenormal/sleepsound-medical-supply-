@@ -1,6 +1,7 @@
 components:
 - components:
-  - layout_properties: {grid_position: 'DGDVEE,NZZOFN'}
+  - data_bindings: []
+    layout_properties: {grid_position: 'DGDVEE,NZZOFN'}
     name: name_label
     properties: {align: center}
     type: RichText
@@ -8,9 +9,10 @@ components:
     name: image_content
     properties: {}
     type: Image
-  - layout_properties: {grid_position: 'DUAUEK,HJXUCG'}
+  - data_bindings: []
+    layout_properties: {grid_position: 'DUAUEK,HJXUCG'}
     name: description_label
-    properties: {align: center, content: description}
+    properties: {align: center, content: ''}
     type: RichText
   - layout_properties: {grid_position: 'XGNTJQ,LDVPBE'}
     name: price_label
@@ -21,46 +23,13 @@ components:
       text: |
         919.00
     type: Label
-  layout_properties: {grid_position: 'SPRPNZ,ISTQFV'}
-  name: content_panel
-  properties: {role: elevated-card}
-  type: ColumnPanel
-- components:
-  - layout_properties: {grid_position: 'DXXTHL,LLTOYV'}
-    name: label_1
-    properties: {font_size: 30, icon: 'fa:star'}
-    type: Label
-  - layout_properties: {grid_position: 'DXXTHL,TKTYNG'}
-    name: label_1_copy
-    properties: {font_size: 30, icon: 'fa:star'}
-    type: Label
-  - layout_properties: {grid_position: 'DXXTHL,XFKRPT'}
-    name: label_1_copy_2
-    properties: {font_size: 30, icon: 'fa:star'}
-    type: Label
-  - layout_properties: {grid_position: 'DXXTHL,HSCNZW'}
-    name: label_1_copy_3
-    properties: {font_size: 30, icon: 'fa:star'}
-    type: Label
-  - layout_properties: {grid_position: 'DXXTHL,ELGQHF'}
-    name: label_1_copy_4
-    properties: {font_size: 30, icon: 'fa:star'}
-    type: Label
-  - layout_properties: {grid_position: 'UBGKZH,SHCKLH'}
-    name: rating
-    properties: {align: center, bold: true, font_size: 24, text: 5 Star Rating!}
-    type: Label
-  - layout_properties: {grid_position: 'TGNKHF,APLKVO'}
-    name: spacer_1
-    properties: {height: 36}
-    type: Spacer
   - event_bindings: {click: buy_click}
-    layout_properties: {grid_position: 'NQFUYE,QTPZUW'}
+    layout_properties: {grid_position: 'RGLXZK,EWOYNW'}
     name: buy
     properties: {bold: true, font_size: 40, role: tonal-button, text: Buy Now!}
     type: Button
-  layout_properties: {grid_position: 'SPRPNZ,CPWRNK'}
-  name: column_panel_2
+  layout_properties: {grid_position: 'SPRPNZ,ISTQFV'}
+  name: content_panel
   properties: {role: elevated-card}
   type: ColumnPanel
 - event_bindings: {click: back_button_click}

@@ -38,3 +38,4 @@ class OurProducts(OurProductsTemplate):
 
     self.content_panel.add_component(products_panel)
 
+
