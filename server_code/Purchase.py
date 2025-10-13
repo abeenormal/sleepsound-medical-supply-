@@ -16,11 +16,10 @@ def charge_user(token,email,product_name):
   stripe_customer = anvil.stripe.new_customer(email, token)
   price = app_tables.products.get(id_name=product_name)['price']
   user = anvil.users.get_user()
-  if user["user_products"] is None:
-    user["user_products"] = []
-
-  if product_name in user["user_products"]:
+  
+  if order_id in user["order_id"]:
     return
     
     result = stripe_customer.charge(amount=price*100, currency="USD")
   user ["user_products"] = user["user_products"] + [product_name]
+  user ["order_id"] = user["order_id"] + 

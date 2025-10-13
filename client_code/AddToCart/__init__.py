@@ -29,27 +29,13 @@ class AddToCart(AddToCartTemplate):
 
   def add_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    if self.quantity_box.text:
-      get_open_form().add_to_cart(self.item, self.quantity_box.text)
-      self.quantity_box.text = ""
-      self.add_button.visible = False
-      self.added_button.visible = True
-      self.timer_1.interval = 1
-    else:
-      self.quantity_box.text = ""
-      Notification("Please specify a quantity").show()  
-
-    
-
+    get_open_form().add_to_cart(self.item)
+   
+   
   def back_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     self.back_button_callback()
 
   
-  def timer_1_tick(self, **event_args):
-    """This method is called Every [interval] seconds. Does not trigger if [interval] is 0."""
-    self.add_button.visible = True
-    self.added_button.visible = False
-    self.timer_1.interval = 0
-
+  
 

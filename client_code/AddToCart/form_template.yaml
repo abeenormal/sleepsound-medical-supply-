@@ -26,24 +26,11 @@ components:
       text: |
         919.00
     type: Label
-  - event_bindings: {pressed_enter: quantity_box_pressed_enter}
-    layout_properties: {grid_position: 'NXZWUB,UAZKZN'}
-    name: quantity_box
-    properties: {type: number}
-    type: TextBox
   - components:
     - layout_properties: {}
       name: add_button
       properties: {background: '#a181d5', role: filled-button, text: Add to Cart}
       type: Button
-    - layout_properties: {}
-      name: added_button
-      properties: {background: '#5e87d9', role: filled-button, text: Added}
-      type: Button
-    - event_bindings: {tick: timer_1_tick}
-      name: timer_1
-      properties: {}
-      type: Timer
     layout_properties: {grid_position: 'GQWNFP,RKNZYX'}
     name: flow_panel_1
     properties: {align: center}

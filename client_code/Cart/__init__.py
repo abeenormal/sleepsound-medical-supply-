@@ -12,31 +12,27 @@ from anvil.tables import app_tables
 
 
 class Cart(CartTemplate):
-  def __init__(self, items **properties):
+  def __init__(self, id_name, **properties):
 
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    self.order = []
-    self.items = items
+    self.order_id = []
+    self.items = id_name
 
-    if not self.items:
+    if self.items == None:
       self.empty_cart_panel.visible = True
       self.column_panel_1.visible = False
+      return
+
+    if self.items:
+      
 
     self.repeating_panel_1.items = self.items
 
-    self.subtotal = sum(item['product']['price'] * item['quantity'] for item in self.items)
-    self.subtotal_label.text = f"${self.subtotal:.02f}"
-
-    if self.subtotal >= 35: #free shipping for orders over $35
-      self.shipping_label.text = 'FREE'     
-    else: #add $5 shipping
-      self.shipping_label.text = "$5.00"
-      self.subtotal = self.subtotal + 5
-
+    self.total = sum(item['id_name']['price']  for item in self.items)
     self.total_label.text = f"${self.subtotal:.02f}"
 
-
+   
   def shop_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     get_open_form().shop_link_click()
@@ -44,7 +40,7 @@ class Cart(CartTemplate):
   def checkout_button_click(self, **event_args):
     """This method is called when the button is clicked"""  
     for i in self.items:
-      self.order.append({'name':i['product']['name'], 'quantity':i['quantity']})
+      self.order.append({'name':i['product']['name']})
     try:
       charge = stripe.checkout.charge(amount=self.subtotal*100,
                                       currency="USD",
