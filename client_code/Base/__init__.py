@@ -82,4 +82,4 @@ class Base(BaseTemplate):
     self.content_panel.clear()
     self.content_panel.add_component(About())
 
-    self.refresh_data_bindings()
+       self.refresh_data_bindings()
