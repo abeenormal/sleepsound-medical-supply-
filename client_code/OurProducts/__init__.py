@@ -25,16 +25,16 @@ class OurProducts(OurProductsTemplate):
     self.content_panel.clear()
     self.load_products() 
   
-  def render_checkout(self, id_name):
+  def render_checkout(self,id_name):
     self.content_panel.clear()
     self.content_panel.add_component(Checkout(id_name, self.back))
 
-  def load_products(self):
+  def load_products(self,):
     products = anvil.server.call("get_all_products").search()
     products_panel = GridPanel()
 
     for i, product in enumerate(products):
-      c = Products(name=product["name"], button_text=f"Purchase for ${product['price']}", description=product["description"], image=product["image"], button_callback=self.render_checkout)
+      c = Products(id_name=product["name"], button_text=f"Purchase for ${product['price']}", description=product["description"], image=product["image"], button_callback=self.render_checkout)
       products_panel.add_component(c, row=str(i//3), width_xs=4)
       
     self.content_panel.add_component(products_panel)
