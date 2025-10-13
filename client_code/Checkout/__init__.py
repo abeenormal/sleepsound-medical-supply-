@@ -22,7 +22,7 @@ class Checkout(CheckoutTemplate):
 
   def update_form(self, id_name):
     products = anvil.server.call('get_product_details', id_name)
-    self.products = products
+    self.product = products
     self.name_label.content = products["name"]
     self.description_label.text = products['description']
     self.price_label.text = f"${products['price']} USD"
