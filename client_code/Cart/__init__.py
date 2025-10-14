@@ -20,7 +20,7 @@ class Cart(CartTemplate):
     
       
 
-    self.repeating_panel_1.items = self.items
+  
 
     self.total = sum(item['id_name']['price']  for item in self.items)
     self.total_label.text = f"${self.subtotal:.02f}"
