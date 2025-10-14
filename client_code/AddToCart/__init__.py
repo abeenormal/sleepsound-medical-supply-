@@ -12,8 +12,8 @@ from anvil.tables import app_tables
 
 
 class AddToCart(AddToCartTemplate):
-  def __init__(self, id_name, back_button_callback, **properties):
-    self.back_button_callback = back_button_callback
+  def __init__(self, id_name, button_text, description, image, button_callback, **properties):
+    
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     self.update_form(id_name)
