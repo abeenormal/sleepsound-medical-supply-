@@ -31,12 +31,16 @@ components:
     name: button_label
     properties: {}
     type: RichText
-  - layout_properties: {grid_position: 'OIDYZE,FGHIZF'}
+  - layout_properties: {grid_position: 'OIDYZE,FGHIZF FKNDUB,ZIJJNP'}
     name: quantity_label
     properties:
       align: center
       text: |
         Number on Hand
+    type: Label
+  - layout_properties: {grid_position: 'OIDYZE,FGHIZF YJBJQE,ZSTRSI'}
+    name: price_label
+    properties: {align: center}
     type: Label
   layout_properties: {grid_position: 'CQNLFN,FGGXAK'}
   name: content_panel

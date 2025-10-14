@@ -15,19 +15,8 @@ class Cart(CartTemplate):
   def __init__(self, id_name, **properties):
 
     # Set Form properties and Data Bindings.
-    self.init_components(**properties)
-    self.order_id = []
-    self.item['id_name']
-    self.item['price'] = price
-    self.item['description'] = description
+    self.init_components(self,id_name,description,image,button_callback,price,quantity, **properties):
     
-    
-
-    if self.items == None:
-      self.empty_cart_panel.visible = True
-      self.column_panel_1.visible = False
-      return
-
     
       
 
@@ -39,7 +28,7 @@ class Cart(CartTemplate):
    
   def shop_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    get_open_form().shop_link_click()
+    open_form('Products').shop_link_click()
 
   def checkout_button_click(self, **event_args):
     """This method is called when the button is clicked"""  
