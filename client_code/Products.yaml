@@ -15,15 +15,17 @@ components:
     type: RichText
   - components:
     - data_bindings: []
-      event_bindings: {click: button_click}
-      name: button
+      event_bindings: {click: add_button_click}
+      layout_properties: {}
+      name: add_button
       properties:
         background: theme:Primary
         bold: true
         font_size: 20
         role: filled-button
-        text: |2+
-
+        text: |
+          Add to Cart
+        visible: true
       type: Button
     layout_properties: {grid_position: 'OIDYZE,PGUXTI'}
     name: button_label

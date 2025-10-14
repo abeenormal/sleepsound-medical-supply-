@@ -11,6 +11,8 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 
 
+
+
 class AddToCart(AddToCartTemplate):
   def __init__(self, id_name, button_text, description, image, button_callback, **properties):
     
@@ -20,21 +22,24 @@ class AddToCart(AddToCartTemplate):
     # Any code you write here will run before the form opens.
 
   def update_form(self, id_name):
-    products = anvil.server.call("get_product_details", id_name)
-    self.products = products
-    self.name_label.content = products["name"]
-    self.description_label.text = products["description"]
-    self.price_label.text = f"${products['price']} USD"
-    self.image_content.source = products["image"]
+    product = anvil.server.call("get_product_details", id_name)
+    self.products = product
+    self.name_label.content = product["name"]
+    self.description_label.content = product["description"]
+    self.price_label.text = f"${product['price']} USD"
+    self.image_content.source = product["image"]
 
   def add_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    get_open_form().add_to_cart(self.item)
+    self.content_panel.clear()
+    self.content_panel.add_to_cart(self.item)
    
    
   def back_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    self.back_button_callback()
+    self.load_products()
+
+  
 
   
   

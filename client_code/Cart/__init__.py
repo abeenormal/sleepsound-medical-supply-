@@ -28,7 +28,7 @@ class Cart(CartTemplate):
       self.column_panel_1.visible = False
       return
 
-    if self.items:
+    
       
 
     self.repeating_panel_1.items = self.items
@@ -48,9 +48,9 @@ class Cart(CartTemplate):
     try:
       charge = stripe.checkout.charge(amount=self.subtotal*100,
                                       currency="USD",
-                                      shipping_address=True,
-                                      title="Cupcakes & Co.",
-                                      icon_url="_/theme/cupcake_logo.png")
+                                      shipping_address=False,
+                                      title="SleepSound",
+                                      icon_url="_/theme/sleeplogo.png")
     except:
       return
 
@@ -59,5 +59,6 @@ class Cart(CartTemplate):
     get_open_form().cart_items = []
     get_open_form().cart_link_click()
     Notification("Your order has been received!").show()
+     self.repeating_panel_1.items = self.items
 
     # Any code you write here will run before the form opens.
