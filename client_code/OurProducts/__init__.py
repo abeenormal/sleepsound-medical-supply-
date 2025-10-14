@@ -45,7 +45,7 @@ class OurProducts(OurProductsTemplate):
   def add_button_click(self, **event_args):
    """This method is called when the button is clicked"""
    open_form('Cart')
-   self.add_to_cart(Products())
+   self.add_to_cart(self.item())
 
   def add_to_cart(self, product, quantity):
     #if item is already in cart, just update the quantity

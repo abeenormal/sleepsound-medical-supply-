@@ -15,15 +15,15 @@ class Cart(CartTemplate):
   def __init__(self, id_name, **properties):
 
     # Set Form properties and Data Bindings.
-    self.init_components(self,id_name,description,image,button_callback,price,quantity, **properties):
+   self.init_components(self,id_name,description,image,button_callback,price,quantity, **properties):
     
     
       
 
   
 
-    self.total = sum(item['id_name']['price']  for item in self.items)
-    self.total_label.text = f"${self.subtotal:.02f}"
+  self.total = sum(item['id_name']['price']  for item in self.items)
+  self.total_label.text = f"${self.subtotal:.02f}"
 
    
   def shop_button_click(self, **event_args):
