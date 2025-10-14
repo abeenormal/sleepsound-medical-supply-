@@ -31,6 +31,13 @@ components:
     name: button_label
     properties: {}
     type: RichText
+  - layout_properties: {grid_position: 'OIDYZE,FGHIZF'}
+    name: quantity_label
+    properties:
+      align: center
+      text: |
+        Number on Hand
+    type: Label
   layout_properties: {grid_position: 'CQNLFN,FGGXAK'}
   name: content_panel
   properties: {background: 'theme:Primary Container', border: '10px solid ', foreground: 'theme:Primary', role: elevated-card}

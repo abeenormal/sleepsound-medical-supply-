@@ -45,7 +45,7 @@ class OurProducts(OurProductsTemplate):
    """This method is called when the button is clicked"""
    self.add_to_cart(Products())
 
-  def add_to_cart(self, product):
+  def add_to_cart(self, product, quantity):
     #if item is already in cart, just update the quantity
-    self.cart_itmes.append({'product': product, 'order_id': order_id})
+    self.cart_itmes.append({'product': product, 'quantity': quantity - 1 })
       
