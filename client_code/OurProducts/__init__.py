@@ -21,6 +21,7 @@ class OurProducts(OurProductsTemplate):
     # Set Form properties and Data Bindings.
      self.init_components(**properties)
      self.load_products()
+     self.cart_itmes = []
     # Any code you write here will run before the form opens.
   def back(self):
     self.content_panel.clear()
@@ -40,3 +41,11 @@ class OurProducts(OurProductsTemplate):
       
     self.content_panel.add_component(products_panel)
 
+  def add_button_click(self, **event_args):
+   """This method is called when the button is clicked"""
+   self.add_to_cart(Products())
+
+  def add_to_cart(self, product):
+    #if item is already in cart, just update the quantity
+    self.cart_itmes.append({'product': product, 'order_id': order_id})
+      

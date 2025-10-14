@@ -19,7 +19,7 @@ class Cart(CartTemplate):
     self.order_id = []
     self.item['id_name']
     self.item['price'] = price
-    self.item[description] = description
+    self.item['description'] = description
     
     
 
@@ -59,6 +59,6 @@ class Cart(CartTemplate):
     get_open_form().cart_items = []
     get_open_form().cart_link_click()
     Notification("Your order has been received!").show()
-     self.repeating_panel_1.items = self.items
+    self.repeating_panel_1.items = self.items
 
     # Any code you write here will run before the form opens.
