@@ -17,18 +17,15 @@ class Cart(CartTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     self.order = []
-    self.items = 
-    
-    self.content_panel.items =GridPanel()
+      
+    self.content_panel =GridPanel()
     
 
     self.total = sum(item['id_name']['price']  for item in self.items)
     self.total_label.text = f"${self.subtotal:.02f}"
 
    
-  def shop_button_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    open_form('Products').shop_link_click()
+ 
 
   def checkout_button_click(self, **event_args):
     """This method is called when the button is clicked"""  

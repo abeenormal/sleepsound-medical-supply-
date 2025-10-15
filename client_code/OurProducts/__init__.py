@@ -11,7 +11,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 from ..Products import Products
 from ..Checkout import Checkout
-from ..Cart import Cart
+
 
 
 
@@ -22,8 +22,10 @@ class OurProducts(OurProductsTemplate):
     # Set Form properties and Data Bindings.
      self.init_components(**properties)
      self.load_products()
-     self.cart_itmes = []
+
     # Any code you write here will run before the form opens.
+  
+  
   def back(self):
     self.content_panel.clear()
     self.load_products() 

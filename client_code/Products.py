@@ -24,9 +24,9 @@ class Products(ProductsTemplate):
     self.quantity_label.text = quantity
         # Any code you write here will run before the form opens.
 
-def add_button_click(self, **event_args):
-  """This method is called when the button is clicked"""
-  self.add_to_cart(self.item())
+  def add_button_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    self.add_to_cart(self.item())
 
   def add_to_cart(self, product, quantity):
     #if item is already in cart, just update the quantity
