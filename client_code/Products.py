@@ -26,6 +26,8 @@ class Products(ProductsTemplate):
 
   def add_button_click(self, **event_args):
     """This method is called when the button is clicked"""
+    get_produ
+    
     self.add_to_cart(self.item())
 
   def add_to_cart(self, product, quantity):
