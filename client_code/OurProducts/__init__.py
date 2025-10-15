@@ -42,12 +42,5 @@ class OurProducts(OurProductsTemplate):
       
     self.content_panel.add_component(products_panel)
 
-  def add_button_click(self, **event_args):
-   """This method is called when the button is clicked"""
-   open_form('Cart')
-   self.add_to_cart(self.item())
-
-  def add_to_cart(self, product, quantity):
-    #if item is already in cart, just update the quantity
-    self.cart_itmes.append({'product': product, 'quantity': quantity - 1 })
+ 
       

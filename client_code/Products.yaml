@@ -54,7 +54,8 @@ is_package: false
 properties:
 - {default_binding_prop: true, default_value: '', important: true, name: name, type: string}
 - {important: true, name: image, type: object}
-- {important: true, name: button_callback, type: object}
 - {default_value: '', important: true, name: description, type: string}
-- {important: true, name: button_text, type: object}
-toolbox_item: {hidden: true}
+- {important: true, name: button_callback, type: object}
+- {default_value: '', important: true, name: price, type: string}
+- {default_value: '', important: true, name: quantity, type: string}
+toolbox_item: {hidden: false, title: Products}

@@ -8,8 +8,24 @@ components:
     text: |
       My Cart
   type: Label
-- components: []
-  layout_properties: {full_width_row: true, grid_position: 'HIINDH,JUAIDW'}
+- components:
+  - layout_properties: {grid_position: 'ZLNBTJ,YMWMPG'}
+    name: item_label
+    properties: {align: center, font_size: 20}
+    type: RichText
+  - layout_properties: {grid_position: 'KEAYHT,KUYVWV'}
+    name: image_content
+    properties: {}
+    type: Image
+  - layout_properties: {grid_position: 'LWLSTT,GZBVQI'}
+    name: description_label
+    properties: {align: center, font_size: 20}
+    type: RichText
+  - layout_properties: {grid_position: 'YLTAZT,HXOKFQ'}
+    name: price_label
+    properties: {align: center, font_size: 20}
+    type: Label
+  layout_properties: {full_width_row: false, grid_position: 'HIINDH,JUAIDW'}
   name: content_panel
   properties: {border: solid, role: tonal-card}
   type: ColumnPanel
