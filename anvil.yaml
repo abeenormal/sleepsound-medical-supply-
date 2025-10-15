@@ -9,36 +9,28 @@ db_schema:
     - admin_ui: {width: 200}
       name: price
       type: string
-    - admin_ui: {width: 200}
+    - admin_ui: {order: -1.5, width: 200}
       name: id_name
       type: simpleObject
     - admin_ui: {width: 200}
       name: user_email
+      type: string
+    - admin_ui: {order: -2, width: 200}
+      name: order_id
       type: string
     server: full
     title: Cart
   orders:
     client: none
     columns:
-    - admin_ui: {order: 0, width: 200}
-      name: order_id
-      type: string
     - admin_ui: {order: 1, width: 200}
-      name: order
+      name: cart_items
       type: simpleObject
-    - admin_ui: {order: 3, width: 200}
-      name: order_date
-      type: datetime
-    - admin_ui: {order: 1.5, width: 200}
-      name: user_email1
-      target: users
-      type: link_single
-    - admin_ui: {order: 4, width: 200}
-      name: id_name
-      target: products
-      type: link_multiple
+    - admin_ui: {order: -1, width: 200}
+      name: charge_id
+      type: string
     server: full
-    title: Orders
+    title: orders
   products:
     client: none
     columns:
@@ -95,9 +87,6 @@ db_schema:
     - admin_ui: {order: 8, width: 200}
       name: user_products
       type: simpleObject
-    - admin_ui: {order: 9, width: 200}
-      name: charge_id
-      type: number
     server: full
     title: Users
 dependencies: []
