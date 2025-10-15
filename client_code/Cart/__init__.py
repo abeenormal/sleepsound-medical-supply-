@@ -15,7 +15,9 @@ class Cart(CartTemplate):
   def __init__(self, id_name, **properties):
 
     # Set Form properties and Data Bindings.
-   self.init_components(self,id_name,description,image,button_callback,price,quantity, **properties):
+    self.init_components( **properties):
+    self.order = []
+    self.items = items
     
     
       
