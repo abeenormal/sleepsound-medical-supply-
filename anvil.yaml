@@ -3,14 +3,18 @@ db_schema:
   cart:
     client: none
     columns:
-    - admin_ui: {order: 1, width: 200}
-      name: user_email
-      target: users
-      type: link_single
-    - admin_ui: {order: -1, width: 200}
+    - admin_ui: {width: 200}
+      name: description
+      type: string
+    - admin_ui: {width: 200}
+      name: price
+      type: string
+    - admin_ui: {width: 200}
       name: id_name
-      target: products
-      type: link_single
+      type: simpleObject
+    - admin_ui: {width: 200}
+      name: user_email
+      type: string
     server: full
     title: Cart
   orders:
