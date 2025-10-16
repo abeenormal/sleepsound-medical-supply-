@@ -3,16 +3,16 @@ db_schema:
   cart:
     client: none
     columns:
-    - admin_ui: {width: 200}
-      name: description
+    - admin_ui: {order: -2.25, width: 200}
+      name: item_description
       type: string
-    - admin_ui: {width: 200}
-      name: price
+    - admin_ui: {order: -2.125, width: 200}
+      name: item_price
       type: string
-    - admin_ui: {order: -1.5, width: 200}
-      name: id_name
+    - admin_ui: {order: -2.5, width: 200}
+      name: item_name
       type: simpleObject
-    - admin_ui: {width: 200}
+    - admin_ui: {order: -3, width: 200}
       name: user_email
       type: string
     - admin_ui: {order: -2, width: 200}

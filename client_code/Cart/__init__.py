@@ -9,28 +9,32 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
+from ..Checkout import Checkout
 
 
 class Cart(CartTemplate):
-  def __init__(self, id_name, **properties):
-
+  def __init__(self,item_name,item_description,it_image,button_callback,item_price, **properties):
+   
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    self.order = []
-      
-    self.content_panel =GridPanel()
+    self.name_label.content = item_name
+    self.description_label.content = item_description
+    self.image_content.source = it_image
+    self.button_callback = button_callback
+    self.price_label.text = item_price
     
 
-    self.total = sum(item['id_name']['price']  for item in self.items)
-    self.total_label.text = f"${self.subtotal:.02f}"
-
-   
- 
-
+    get_open_form('Cart')        
+     
+  def return_button_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    self.button_callback()
+    
+  
   def checkout_button_click(self, **event_args):
     """This method is called when the button is clicked"""  
     for i in self.items:
-      self.order.append({'name':i['product']['name']})
+      self.order.append({'item_name':i['product']['name']})
     try:
       charge = stripe.checkout.charge(amount=self.subtotal*100,
                                       currency="USD",
@@ -45,6 +49,9 @@ class Cart(CartTemplate):
     get_open_form().cart_items = []
     get_open_form().cart_link_click()
     Notification("Your order has been received!").show()
-    self.repeating_panel_1.items = self.items
-
+   
     # Any code you write here will run before the form opens.
+ 
+    self.content_panel.add_component(products_panel)
+
+  

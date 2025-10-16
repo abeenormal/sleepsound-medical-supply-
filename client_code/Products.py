@@ -9,11 +9,14 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
+from .Cart import Cart
+
+
 
 
 
 class Products(ProductsTemplate):
-  def __init__(self,id_name,description,image,button_callback,price,quantity, **properties):
+  def __init__(self,id_name,description,image,button_callback,price, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     self.name_label.content = id_name
@@ -21,20 +24,17 @@ class Products(ProductsTemplate):
     self.image_content.source = image
     self.button_callback = button_callback
     self.price_label.text = price
-    self.quantity_label.text = quantity
+   
         # Any code you write here will run before the form opens.
 
-  def add_button_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    get_produ
+  def add_cart_button_click(self,item_name, item_description, it_image, button_callback, item_price, **event_args):
+   """This method is called when the button is clicked""" 
+  open_form(Cart)
+  
+   
+
     
-    self.add_to_cart(self.item())
 
-  def add_to_cart(self, product, quantity):
-    #if item is already in cart, just update the quantity
-    self.cart_itmes.append({'product': product, 'quantity': quantity - 1 })
-
-    self.content_panel= GridPanel()
 
   
  

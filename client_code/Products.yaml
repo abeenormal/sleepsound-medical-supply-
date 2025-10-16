@@ -15,9 +15,9 @@ components:
     type: RichText
   - components:
     - data_bindings: []
-      event_bindings: {click: add_button_click}
+      event_bindings: {click: add_cart_button_click}
       layout_properties: {}
-      name: add_button
+      name: add_cart_button
       properties:
         background: theme:Primary
         bold: true
@@ -31,14 +31,7 @@ components:
     name: button_label
     properties: {}
     type: RichText
-  - layout_properties: {grid_position: 'OIDYZE,FGHIZF FKNDUB,ZIJJNP'}
-    name: quantity_label
-    properties:
-      align: center
-      text: |
-        Number on Hand
-    type: Label
-  - layout_properties: {grid_position: 'OIDYZE,FGHIZF YJBJQE,ZSTRSI'}
+  - layout_properties: {grid_position: 'OIDYZE,FGHIZF'}
     name: price_label
     properties: {align: center}
     type: Label
