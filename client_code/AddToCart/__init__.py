@@ -14,7 +14,7 @@ from anvil.tables import app_tables
 
 
 class AddToCart(AddToCartTemplate):
-  def __init__(self, id_name, button_text, description, image, button_callback, **properties):
+  def __init__(self, id_name, description, image, button, **properties):
     
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
@@ -31,8 +31,7 @@ class AddToCart(AddToCartTemplate):
 
   def add_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    self.content_panel.clear()
-    self.content_panel.add_to_cart(self.item)
+    anvil.server.call('add_item_to_session_cart', id_name, description, image, price)
    
    
   def back_button_click(self, **event_args):

@@ -9,19 +9,18 @@ from anvil.tables import app_tables
 import anvil.server
 
 @anvil.server.callable
-def add_to_cart(order_id,id_name, description, image, price, email):
-  anvil.users.get_user('email')
-  app_tables.products.get.product_details('id_name')
-  order_id = app_tables.cart.get_order_id()
-  if order_id is None:
-  # order_id was None, so add the row with a default value.
-    app_tables.cart.add_row(order_id="default_order_id", id_name=id_name, price=price, description=description, email=email)
-  else:
-  # order_id was not None, so use the value from the 10th index.
-   app_tables.cart.add_row(order_id=order_id[10], id_name=id_name, price=price, description=description, email=email)
- 
-  return
-   
+def add_item_to_session_cart_items(id_name, description, image, price, cart_id):
+  if 'cart' not in anvil.server.session:
+   anvil.server.session['cart']= []
 
-def add_order(charge_id, cart_items):
-  app_tables.orders.add_row(charge_id=charge_id, order=cart_items)
+   cart_items = {'id_name': id_name, 'description': description, 'image': image, 'price': price, 'cart_id': cart_id,}
+   anvil.server.session['cart'].append(cart_items)
+  
+def add_to_cart_button_click(self, **event_args):
+  # ... get product info (product_id, quantity) from form components ...
+  anvil.server.call('add_item_to_session_cart', 'id_name','description','image','price', 'cart_id',)
+
+  
+
+
+ 

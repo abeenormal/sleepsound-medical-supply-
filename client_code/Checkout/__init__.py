@@ -30,6 +30,11 @@ class Checkout(CheckoutTemplate):
     self.price_label.text = f"${products['price']} USD"
     self.image_content.source = products['image']
 
+    
+
+  def add_order(self, charge_id, cart_items):
+    app_tables.orders.add_row(charge_id=charge_id, order=cart_items)
+  
   def buy_click(self, **event_args):
     """This method is called when the button is clicked"""
     if anvil.users.get_user() ==None:

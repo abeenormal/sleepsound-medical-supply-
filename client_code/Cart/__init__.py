@@ -22,10 +22,7 @@ class Cart(CartTemplate):
     self.image_content.source = it_image
     self.button_callback = button_callback
     self.price_label.text = item_price
-    
-
-    get_open_form('Cart')        
-     
+ 
   def return_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     self.button_callback()
@@ -36,11 +33,7 @@ class Cart(CartTemplate):
     for i in self.items:
       self.order.append({'item_name':i['product']['name']})
     try:
-      charge = stripe.checkout.charge(amount=self.subtotal*100,
-                                      currency="USD",
-                                      shipping_address=False,
-                                      title="SleepSound",
-                                      icon_url="_/theme/sleeplogo.png")
+      charge = stripe.checkout.charge(amount=self.subtotal*100, currency="USD", title="SleepSound", icon_url="_/theme/sleeplogo.png")
     except:
       return
 
@@ -52,6 +45,6 @@ class Cart(CartTemplate):
    
     # Any code you write here will run before the form opens.
  
-    self.content_panel.add_component(products_panel)
+    self.content_panel.add_component(Checkout(self,id_name,))
 
   

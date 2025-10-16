@@ -1,25 +1,33 @@
 allow_embedding: false
 db_schema:
-  cart:
+  cart_items:
     client: none
     columns:
-    - admin_ui: {order: -2.25, width: 200}
-      name: item_description
-      type: string
-    - admin_ui: {order: -2.125, width: 200}
-      name: item_price
-      type: string
-    - admin_ui: {order: -2.5, width: 200}
-      name: item_name
-      type: simpleObject
-    - admin_ui: {order: -3, width: 200}
-      name: user_email
-      type: string
-    - admin_ui: {order: -2, width: 200}
-      name: order_id
-      type: string
+    - admin_ui: {order: 2, width: 200}
+      name: id_name
+      target: products
+      type: link_single
+    - admin_ui: {order: 3, width: 200}
+      name: description
+      target: products
+      type: link_single
+    - admin_ui: {order: 4, width: 200}
+      name: image
+      target: products
+      type: link_single
+    - admin_ui: {order: 5, width: 200}
+      name: price
+      target: products
+      type: link_single
+    - admin_ui: {width: 200}
+      name: email
+      target: users
+      type: link_single
+    - admin_ui: {order: 7, width: 200}
+      name: cart_id
+      type: number
     server: full
-    title: Cart
+    title: Cart_items
   orders:
     client: none
     columns:
@@ -57,6 +65,25 @@ db_schema:
       type: datetime
     server: full
     title: Products
+  shopping_cart:
+    client: none
+    columns:
+    - admin_ui: {order: 1, width: 200}
+      name: sessionID
+      type: string
+    - admin_ui: {order: 2, width: 200}
+      name: user_email
+      target: users
+      type: link_single
+    - admin_ui: {order: 3, width: 200}
+      name: status
+      type: simpleObject
+    - admin_ui: {width: 200}
+      name: cart_id
+      target: cart_items
+      type: link_single
+    server: full
+    title: Shopping_cart
   users:
     client: none
     columns:

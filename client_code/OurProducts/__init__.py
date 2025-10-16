@@ -18,15 +18,13 @@ from ..Checkout import Checkout
 
 class OurProducts(OurProductsTemplate):
   def __init__(self, **properties):
-     
-    
+        
     # Set Form properties and Data Bindings.
      self.init_components(**properties)
      self.load_products()
 
-    # Any code you write here will run before the form opens.
-  
-  
+    # Any code you write here will run before the form opens. 
+   
   def back(self):
     self.content_panel.clear()
     self.load_products() 
@@ -40,7 +38,7 @@ class OurProducts(OurProductsTemplate):
     products_panel = GridPanel()
 
     for i, product in enumerate(products):
-      c = Products(id_name=product["name"], price=f"Purchase for ${product['price']}", quantity=product['quantity'], description=product["description"], image=product["image"], button_callback=self.render_checkout)
+      c = Products(id_name=product["name"], price=f"Purchase for ${product['price']}", quantity=product['quantity'], description=product["description"], image=product["image"], add_cart_button=['add_cart_button'],)
       products_panel.add_component(c, row=str(i//3), width_xs=4)
       
     self.content_panel.add_component(products_panel)
