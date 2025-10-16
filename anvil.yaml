@@ -112,7 +112,7 @@ db_schema:
       name: signed_up
       type: datetime
     - admin_ui: {order: 8, width: 200}
-      name: user_products
+      name: cart_items
       type: simpleObject
     server: full
     title: Users

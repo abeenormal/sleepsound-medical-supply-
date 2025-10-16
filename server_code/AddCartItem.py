@@ -15,7 +15,9 @@ def add_item_to_session_cart_items(id_name, description, image, price, cart_id):
 
    cart_items = {'id_name': id_name, 'description': description, 'image': image, 'price': price, 'cart_id': cart_id,}
    anvil.server.session['cart'].append(cart_items)
-  
+
+    
+@anvil.server.callable  
 def add_to_cart_button_click(self, **event_args):
   # ... get product info (product_id, quantity) from form components ...
   anvil.server.call('add_item_to_session_cart', 'id_name','description','image','price', 'cart_id',)

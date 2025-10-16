@@ -45,6 +45,6 @@ class Cart(CartTemplate):
    
     # Any code you write here will run before the form opens.
  
-    self.content_panel.add_component(Checkout(self,id_name,))
+    self.content_panel.add_component(
 
   
