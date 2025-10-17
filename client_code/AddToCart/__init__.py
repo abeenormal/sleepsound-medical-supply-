@@ -51,11 +51,13 @@ class AddToCart(AddToCartTemplate):
     """This method is called when the button is clicked"""
     user = anvil.users.get_user()
     anvil.server.call("add_item_to_session_cart_items"('id_name', 'description', 'image', 'price', 'cart_id',)
-    if user["cart_items"] and self.product["id_name"] in user["cart_items"]:
+    if user["cart_items"] and self.product["id_name"] in user["cart_items"]
+     
+
       #display the items in Cart
-    for i, product in enumerate():
+     else i, product in enumerate(Products):
       c = CartItem(id_name=product["name"], price=f"Purchase for ${product['price']}", quantity=product['quantity'], description=product["description"], image=product["image"], add_cart_button=['add_cart_button'],)
-      cart_panel.add_component(c, row=str(i//3), width_xs=4)
+      content_panel.add_component(c, row=str(i//3), width_xs=4)
 
       self.content_panel.add_component(cart_panel)  
    
