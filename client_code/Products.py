@@ -9,7 +9,7 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
-from .Cart import Cart
+
 
 
 
@@ -22,23 +22,16 @@ class Products(ProductsTemplate):
     self.name_label.content = id_name
     self.description_label.content = description
     self.image_content.source = image
-    self.add_cart_button
+    self.button_label.text = add_cart_button
     self.price_label.text = price
     # Any code you write here will run before the form opens.
-   
-   
 
-
-  def add_cart_button_click(self, id_name='id_name', **event_args):
-    anvil.server.call('add_item_to_session_cart', 'id_name',)
+  def add_cart_button_click(self, **event_args):
+    """This method is called when the button is clicked"""
   
-
-    
-
-
+   
+   
 
 
 
-
-
-
+     

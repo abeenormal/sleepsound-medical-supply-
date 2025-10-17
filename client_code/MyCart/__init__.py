@@ -45,6 +45,6 @@ class MyCart(MyCartTemplate):
    
     # Any code you write here will run before the form opens.
  
-    self.content_panel.add_component(
+    self.cart_panel.add_component(MyCart)
 
   

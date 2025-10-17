@@ -37,21 +37,25 @@ class AddToCart(AddToCartTemplate):
     self.content_panel.clear()  
 
   def load_cart(self):
-    MyCart = anvil.server.call('get_user_products')
+    self.products = anvil.server.call('get_user_products')
 
 
   def back_button_click(self, **event_args):
         """This method is called when the button is clicked"""
+  self.content_panel.clear()
+  self.content_panel.add_component(Products)
+  
 
 
   def add_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     user = anvil.users.get_user()
-    if user["cart_items"] and self.products["id_name"] in user["cart_items"]:
+    anvil.server.call("add_item_to_session_cart_items"('id_name', 'description', 'image', 'price', 'cart_id',)
+    if user["cart_items"] and self.product["id_name"] in user["cart_items"]:
       #display the items in Cart
-      for i, product in enumerate(products):
-        c = Products(id_name=product["name"], price=f"Purchase for ${product['price']}", quantity=product['quantity'], description=product["description"], image=product["image"], add_cart_button=['add_cart_button'],)
-        products_panel.add_component(c, row=str(i//3), width_xs=4)
+    for i, product in enumerate():
+      c = CartItem(id_name=product["name"], price=f"Purchase for ${product['price']}", quantity=product['quantity'], description=product["description"], image=product["image"], add_cart_button=['add_cart_button'],)
+      cart_panel.add_component(c, row=str(i//3), width_xs=4)
 
       self.content_panel.add_component(cart_panel)  
    
