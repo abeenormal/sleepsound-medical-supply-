@@ -1,4 +1,4 @@
-from ._anvil_designer import CartTemplate
+from ._anvil_designer import MyCartTemplate
 from anvil import *
 import anvil.server
 import stripe.checkout
@@ -12,7 +12,7 @@ from anvil.tables import app_tables
 from ..Checkout import Checkout
 
 
-class Cart(CartTemplate):
+class MyCart(MyCartTemplate):
   def __init__(self,item_name,item_description,it_image,button_callback,item_price, **properties):
    
     # Set Form properties and Data Bindings.

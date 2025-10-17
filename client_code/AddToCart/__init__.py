@@ -11,6 +11,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 from ..Checkout import Checkout
 from ..Products import Products
+from ..MyCart import MyCart
 
 
 
@@ -32,25 +33,30 @@ class AddToCart(AddToCartTemplate):
     self.price_label.text = f"${product['price']} USD"
     self.image_content.source = product["image"]
 
-    def render_cart(self,id_name):
-      self.content_panel.clear()
-      self.content_panel
-      
+  def render_cart(self,id_name):
+    self.content_panel.clear()  
+
+  def load_cart(self):
+    MyCart = anvil.server.call('get_user_products')
+
+
+  def back_button_click(self, **event_args):
+        """This method is called when the button is clicked"""
+
 
   def add_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     user = anvil.users.get_user()
     if user["cart_items"] and self.products["id_name"] in user["cart_items"]:
       #display the items in Cart
+      for i, product in enumerate(products):
+        c = Products(id_name=product["name"], price=f"Purchase for ${product['price']}", quantity=product['quantity'], description=product["description"], image=product["image"], add_cart_button=['add_cart_button'],)
+        products_panel.add_component(c, row=str(i//3), width_xs=4)
 
-      return
-
-    i
+      self.content_panel.add_component(cart_panel)  
    
    
-  def back_button_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    self.render_products()
+  
 
   
 

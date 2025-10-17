@@ -1,6 +1,6 @@
 allow_embedding: false
 db_schema:
-  cart_items:
+  cartitems:
     client: none
     columns:
     - admin_ui: {order: 2, width: 200}
@@ -27,7 +27,7 @@ db_schema:
       name: cart_id
       type: number
     server: full
-    title: Cart_items
+    title: CartItems
   orders:
     client: none
     columns:
@@ -80,7 +80,7 @@ db_schema:
       type: simpleObject
     - admin_ui: {width: 200}
       name: cart_id
-      target: cart_items
+      target: cartitems
       type: link_single
     server: full
     title: Shopping_cart
