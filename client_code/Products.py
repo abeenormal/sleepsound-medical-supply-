@@ -9,7 +9,7 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
-from .AddToCart import AddToCart
+
 
 
 
@@ -30,7 +30,7 @@ class Products(ProductsTemplate):
 
   def add_cart_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    self.content_panel.add_component(AddToCart())
+    self.content_panel.add_component(AddToCart('item_name', 'item_description', 'it_image', 'button_callback', 'item_price'))
    
    
 
