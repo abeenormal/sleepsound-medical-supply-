@@ -30,7 +30,7 @@ class OurProducts(OurProductsTemplate):
   
   def render_checkout(self,id_name):
     self.content_panel.clear()
-    self.content_panel.add_component(Checkout(self,id_name))
+    self.content_panel.add_component(Checkout(self,id_name, self.back))
 
   def load_products(self,):
     products = anvil.server.call("get_all_products").search()
@@ -41,4 +41,3 @@ class OurProducts(OurProductsTemplate):
       products_panel.add_component(c, row=str(i//3), width_xs=4)
       
     self.content_panel.add_component(products_panel)
-
