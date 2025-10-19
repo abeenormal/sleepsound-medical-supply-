@@ -37,10 +37,8 @@ class OurProducts(OurProductsTemplate):
     products_panel = GridPanel()
 
     for i, product in enumerate(products):
-      c = Products(id_name=product["name"], button_text=f"Purchase for ${product['price']}", quantity=product['quantity'], description=product["description"], image=product["image"], button_callback=self.button_callback,)
+      c = Products(id_name=product["name"], button_text=f"Purchase for ${product['price']}", description=product["description"], image=product["image"], button_callback=self.render_checkout)
       products_panel.add_component(c, row=str(i//3), width_xs=4)
       
     self.content_panel.add_component(products_panel)
 
- 
-      
