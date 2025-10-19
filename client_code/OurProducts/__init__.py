@@ -38,4 +38,6 @@ class OurProducts(OurProductsTemplate):
 
     self.content_panel.add_component(products_panel)
 
+    self.refresh_data_bindings()
+
 

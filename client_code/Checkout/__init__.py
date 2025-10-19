@@ -23,7 +23,7 @@ class Checkout(CheckoutTemplate):
   def update_form(self, id_name):
     product = anvil.server.call('get_product_details', id_name)
     self.products = product
-    self.name_label.text = product["name"]
+    self.name_label.content = product["name"]
     self.description_label.text = product['description']
     self.price_label.text = f"${product['price']} USD"
     self.image_content.source = product['image']
@@ -53,5 +53,5 @@ class Checkout(CheckoutTemplate):
     """This method is called when the button is clicked"""
     self.back_button_callback()
 
-
+   
 
