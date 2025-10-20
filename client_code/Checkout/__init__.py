@@ -24,7 +24,7 @@ class Checkout(CheckoutTemplate):
     # Any code you write here will run before the form opens.
 
   def update_form(self,id_name):
-    products = anvil.server.call('get_product_details')
+    products = anvil.server.call('get_product_details').search()
     self.products = products
     self.name_label.content = products["name"]
     self.description_label.content = products['description']
