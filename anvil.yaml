@@ -51,9 +51,6 @@ db_schema:
     - admin_ui: {order: 1.0625, width: 200}
       name: price
       type: number
-    - admin_ui: {order: 5, width: 200}
-      name: quantity
-      type: number
     - admin_ui: {order: 1.5, width: 200}
       name: image
       type: media

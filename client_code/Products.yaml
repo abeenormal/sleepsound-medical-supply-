@@ -13,10 +13,11 @@ components:
     name: description_label
     properties: {align: center, content: description, font_size: 20}
     type: RichText
-  - event_bindings: {click: button_1_click}
+  - data_bindings: []
+    event_bindings: {click: buy_button_click}
     layout_properties: {grid_position: 'ZAJMAG,KVBJLE'}
-    name: button
-    properties: {text: price}
+    name: buy_button
+    properties: {role: tonal-button, text: '', visible: true}
     type: Button
   layout_properties: {grid_position: 'CQNLFN,FGGXAK'}
   name: content_panel
