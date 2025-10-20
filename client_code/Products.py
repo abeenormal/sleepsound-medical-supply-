@@ -23,7 +23,7 @@ class Products(ProductsTemplate):
     self.name_label.content = id_name
     self.description_label.content = description
     self.image_content.source = image
-    self.button.text = price
+    self.button.text = button_text
     self.button_callback = button_callback
     # Any code you write here will run before the form opens.
 

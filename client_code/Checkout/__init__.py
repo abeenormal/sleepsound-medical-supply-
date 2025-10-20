@@ -12,6 +12,7 @@ from anvil.tables import app_tables
 import stripe
 
 
+
 class Checkout(CheckoutTemplate):
   def __init__(self, id_name, back_button_callback, **properties):
     self.back_button_callback = back_button_callback
@@ -23,7 +24,7 @@ class Checkout(CheckoutTemplate):
     # Any code you write here will run before the form opens.
 
   def update_form(self,id_name):
-    products = anvil.server.call('get_product_details', id_name)
+    products = anvil.server.call('get_product_details')
     self.products = products
     self.name_label.content = products["name"]
     self.description_label.content = products['description']
