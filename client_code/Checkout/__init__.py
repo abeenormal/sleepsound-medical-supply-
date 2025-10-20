@@ -24,7 +24,7 @@ class Checkout(CheckoutTemplate):
     # Any code you write here will run before the form opens.
 
   def update_form(self,id_name):
-    products = anvil.server.call('get_product_details').search()
+    products = anvil.server.call('get_product_details', id_name)
     self.products = products
     self.name_label.content = products["name"]
     self.description_label.content = products['description']
@@ -50,12 +50,7 @@ class Checkout(CheckoutTemplate):
       alert("You purchased this item!")
       return
 
-    token, info = stripe.checkout.get_token(amount=self.products["price"]*100, currency="USD", title=self.products["name"], description=self.products["description"])
-    try:
-      anvil.server.call("charge_user", token, user["email"], self.products["id_name"])
-      alert("Success")
-    except Exception as e:
-      alert(str(e))
+ 
 
   def back_button_click(self, **event_args):
     """This method is called when the button is clicked"""
