@@ -17,7 +17,7 @@ from anvil.tables import app_tables
 
 
 class Products(ProductsTemplate):
-  def __init__(self,id_name,button_text, description,image,price,button_callback, **properties):
+  def __init__(self,id_name,button_text, description,image,button_callback, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)    
     self.name_label.content = id_name
