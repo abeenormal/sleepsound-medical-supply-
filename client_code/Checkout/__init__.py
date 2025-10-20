@@ -23,7 +23,7 @@ class Checkout(CheckoutTemplate):
   def update_form(self, id_name):
     products = anvil.server.call('get_product_details', id_name)
     self.products = products
-    self.name_label.content = products["id_name"]
+    self.name_label.content = products["name"]
     self.description_label.text = products['description']
     self.price_label.text = f"${products['price']} USD"
     self.image_content.source = products['image']
@@ -38,9 +38,9 @@ class Checkout(CheckoutTemplate):
       alert("Please sign in!")
       return
 
-    if user["user_products"]and self.products["id_name"] in user["user_products"]:
-      alert("You purchased this item!")
-      return
+      if user["user_products"]and self.products["id_name"] in user["user_products"]:
+        alert("You purchased this item!")
+        return
 
     token, info = stripe.checkout.get_token(amount=self.products["price"]*100, currency="USD", title=self.products["name"], description=self.products["description"])
     try:

@@ -4,7 +4,7 @@ db_schema:
     client: none
     columns:
     - admin_ui: {order: 0.0625, width: 200}
-      name: name
+      name: id_name
       type: string
     - admin_ui: {order: 3, width: 200}
       name: description
@@ -19,7 +19,7 @@ db_schema:
       name: image
       type: media
     - admin_ui: {order: 4, width: 200}
-      name: id_name
+      name: name
       type: string
     - admin_ui: {order: 1.125, width: 200}
       name: created
