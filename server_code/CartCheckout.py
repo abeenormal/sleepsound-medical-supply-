@@ -20,21 +20,22 @@ def clear_cart():
 
 @anvil.server.callable
 def process_order(transaction_details):
-  app_tables.orders.add_row() checkout_id=transaction_details['id'],
-    amount=transaction_details['amount'],)
+  app_tables.orders.add_row() (checkout_id=transaction_details['id'], amount=transaction_details['amount'],)
 
-  def charge_user(token, email, amount, currency):
+def charge_user(token, email, amount, currency):
     # Create a new customer or retrieve an existing one and charge them
   # For simplicity, this example just creates a new customer and charges immediately
-    try:
+  try:
     # You might want to link this to your Users table
      user = anvil.stripe.new_customer(email, token) 
-     charge = customer.charge(total_amount=amount, currency=currency)
+     charge = user.charge(total_amount=amount, currency=currency)
+     alert(f"Charge successful for {user.email_textbox.text}: {charge_result['id']}")
+  except Exception as e:
+     alert(f"Charge failed: {e}")
     # Charge the customer   
-    
      alert(f"Charge successful for {email}: {charge['id']}")
       # Return useful information to the client
-    except Exception as e:
+  except Exception as e:
     # If the charge fails, raise an exception to be caught on the client side
      alert(f"Charge failed: {e}")
-    raise anvil.server.CallableError(f"Charge failed: {e}")
+     raise anvil.server.CallableError(f"Charge failed: {e}")

@@ -37,15 +37,23 @@ class Checkout(CheckoutTemplate):
     self.back_button_callback()
 
 # In a Form:
+  
+
+  def calculate_total(self, cart_items):
+    total = sum(self.cart_items['price'] for item in self.items)
+    """Calculates the final total including tax."""      
+    return round(total, 2) 
+    
 
   def checkout_button_click(self, **event_args):
    """This method is called when the button is clicked"""
-  total_amount = self.calculate_total() # Assuming this method returns the amount in the lowest unit (e.g., cents)
+  self.cart_items.calculate_total()
+  self.total_label.text
   currency = "USD" # Currency code should be a string, e.g., "USD"
 
   try:
   # Get the token and user info from the Stripe checkout form
-    token, info = stripe.checkout.get_token(amount=total_amount, currency=currency)
+    token, info = stripe.checkout.get_token(total=total, currency=currency)
 
   # Call a server-side function to process the charge
     charge_result = anvil.server.call('charge_user', token, info['email'], total_amount, currency)
