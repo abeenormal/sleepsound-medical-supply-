@@ -30,5 +30,6 @@ unique_ids:
   scripts: {}
   server_modules:
     AddCartItem: '1760114481191628216418972.9917'
+    CartCheckout: '176106713663778316710429.79071'
     CartItemDetails: '1759424395213351573040182.9822'
     ProductDetails: '1759271657646293245697312.9425'

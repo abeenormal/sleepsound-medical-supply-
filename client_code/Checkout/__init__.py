@@ -14,47 +14,54 @@ import stripe
 
 
 class Checkout(CheckoutTemplate):
-  def __init__(self, id_name, back_button_callback, **properties):
+  def __init__(self, cart_items, back_button_callback, **properties):
     self.back_button_callback = back_button_callback
     
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    self.update_form(id_name)
-    
+    self.display_cart_items()
+        
     # Any code you write here will run before the form opens.
-
-  def update_form(self,id_name):
-    products = anvil.server.call('get_product_details', id_name)
-    self.products = products
-    self.name_label.content = products["name"]
-    self.description_label.content = products['description']
-    self.price_label.text = f"${products['price']} USD"
-    self.image_content.source = products['image']
-
+  def display_cart_items(self):
+    self.cart_items = anvil.server.call('get_session_cart-items')
+  
     
 
   def add_order(self, charge_id, cart_items):
     app_tables.orders.add_row(charge_id=charge_id, order=cart_items)
   
-  def buy_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    if anvil.users.get_user() ==None:
-      anvil.users.login_with_form()
-
-    user = anvil.users.get_user()
-    if user ==None:
-      alert("Please sign in!")
-      return
-
-    if user["user_products"]and self.products["id_name"] in user["user_products"]:
-      alert("You purchased this item!")
-      return
-
- 
+  
 
   def back_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     self.back_button_callback()
+
+# In a Form:
+
+  def checkout_button_click(self, **event_args):
+   """This method is called when the button is clicked"""
+  total_amount = self.calculate_total() # Assuming this method returns the amount in the lowest unit (e.g., cents)
+  currency = "USD" # Currency code should be a string, e.g., "USD"
+
+  try:
+  # Get the token and user info from the Stripe checkout form
+    token, info = stripe.checkout.get_token(amount=total_amount, currency=currency)
+
+  # Call a server-side function to process the charge
+    charge_result = anvil.server.call('charge_user', token, info['email'], total_amount, currency)
+
+  # Handle success (e.g., show a confirmation message)
+    alert(f"Payment succeeded! Transaction ID: {charge_result['id']}")
+  except stripe.checkout.Canceled:
+  # Handle the case where the user cancels the payment
+    alert("Payment cancelled.")
+  except anvil.server.CallableError as e:
+  # Handle errors from the server-side function
+    alert(f"Payment failed: {e.args[0]}")
+  except Exception as e:
+  # Handle any other unexpected errors
+    alert(f"An unexpected error occurred: {e}")
+
 
 
 

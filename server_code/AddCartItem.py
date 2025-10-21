@@ -27,7 +27,7 @@ def add_item_to_session_cart_items(id_name, description, image, price, cart_id):
 
 
   
-  anvil.server.call('add_item_to_session_cart', 'id_name','description','image','price', 'cart_id',)
+
 
   
 
