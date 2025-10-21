@@ -21,8 +21,11 @@ def add_item_to_session_cart_items(id_name, description, image, price, cart_id):
    new_item = {'id_name': id_name, 'description': description, 'image': image, 'price': price, 'cart_id': cart_id,}
    
    anvil.server.session['cart_items'].append(new_item)
-  return len(anvil.server.session['cart_items'])
-
+  return (anvil.server.session['cart_items'])
+  
+@anvil.server.callable
+def get_session_cart_items():
+  return anvil.server.session.get("cart_items", [])
     
 @anvil.server.callable  
 def add_to_cart(id_name, **event_args):
