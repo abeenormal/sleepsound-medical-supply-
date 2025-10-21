@@ -10,9 +10,7 @@ import anvil.server
 
 # This is a server module. It runs on the Anvil server,
 # rather than in the user's browser.
-@anvil.server.callable
-def get_session_cart_items():
-  return anvil.server.session.get("cart-items", [])
+
 
 @anvil.server.callable
 def clear_cart():

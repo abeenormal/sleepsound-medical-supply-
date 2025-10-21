@@ -9,6 +9,10 @@ from anvil.tables import app_tables
 import anvil.server
 
 @anvil.server.callable
+def get_session_cart_items():
+  return anvil.server.session.get("cart-items", [])
+
+@anvil.server.callable
 def add_item_to_session_cart_items(id_name, description, image, price, cart_id):
   if "cart_id" not in anvil.server.session:
     cart_id = 100
