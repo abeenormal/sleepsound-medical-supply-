@@ -46,22 +46,13 @@ class Checkout(CheckoutTemplate):
 
   def checkout_button_click(self, **event_args):
    """This method is called when the button is clicked"""
+  
+   token, info = stripe.checkout.get_token(amount=["total"], currency="USD")
   try:
-      session_id = anvil.server.call('create_checkout_session')
-      stripe.checkout.go_to_checkout(session_id)
-  except Exception as e:
-  # Display an error message to the user
-   alert(e.args[0])
-
-  try:
-  # Get the token and user info from the Stripe checkout form
-    token, info = stripe.checkout.get_token(total=total, currency=currency)
-
-  # Call a server-side function to process the charge
-    charge_result = anvil.server.call('charge_user', token, info['email'], total, currency)
-
-  # Handle success (e.g., show a confirmation message)
-    alert(f"Payment succeeded! Transaction ID: {charge_result['id']}")
+    # Call a server-side function to process the charge
+    anvil.server.call('charge_user', token)
+    # Handle success (e.g., show a confirmation message)
+    alert("Payment succeeded!")
   except stripe.checkout.Canceled:
   # Handle the case where the user cancels the payment
     alert("Payment cancelled.")
