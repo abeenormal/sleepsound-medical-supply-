@@ -29,7 +29,7 @@ def charge_user(token, email, amount, currency):
     # You might want to link this to your Users table
      user = anvil.stripe.new_customer(email, token) 
      charge = user.charge(total_amount=amount, currency=currency)
-     alert(f"Charge successful for {user.email_textbox.text}: {charge_result['id']}")
+    alert(f"Charge successful for {user.email_textbox.text}: {charge_result['id']}")
   except Exception as e:
      alert(f"Charge failed: {e}")
     # Charge the customer   

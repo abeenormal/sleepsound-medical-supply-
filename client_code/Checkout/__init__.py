@@ -40,23 +40,25 @@ class Checkout(CheckoutTemplate):
   
 
   def calculate_total(self, cart_items):
-    total = sum(self.cart_items['price'] for item in self.items)
-    """Calculates the final total including tax."""      
-    return round(total, 2) 
+    total = sum(self.cart_items['price'] for item in self.items) 
+    return total
     
 
   def checkout_button_click(self, **event_args):
    """This method is called when the button is clicked"""
-  self.cart_items.calculate_total()
-  self.total_label.text
-  currency = "USD" # Currency code should be a string, e.g., "USD"
+  try:
+      session_id = anvil.server.call('create_checkout_session')
+      stripe.checkout.go_to_checkout(session_id)
+  except Exception as e:
+  # Display an error message to the user
+   alert(e.args[0])
 
   try:
   # Get the token and user info from the Stripe checkout form
     token, info = stripe.checkout.get_token(total=total, currency=currency)
 
   # Call a server-side function to process the charge
-    charge_result = anvil.server.call('charge_user', token, info['email'], total_amount, currency)
+    charge_result = anvil.server.call('charge_user', token, info['email'], total, currency)
 
   # Handle success (e.g., show a confirmation message)
     alert(f"Payment succeeded! Transaction ID: {charge_result['id']}")
