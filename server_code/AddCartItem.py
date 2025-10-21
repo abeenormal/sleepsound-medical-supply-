@@ -13,7 +13,7 @@ def add_item_to_session_cart_items(id_name, description, image, price, cart_id):
   if "cart_id" not in anvil.server.session:
     cart_id = 100
   else:
-    cart_id= id
+    cart_id= id + 10
   
   if 'cart_items' not in anvil.server.session:
    anvil.server.session['cart_items']= []
@@ -23,19 +23,8 @@ def add_item_to_session_cart_items(id_name, description, image, price, cart_id):
    anvil.server.session['cart_items'].append(new_item)
   return (anvil.server.session['cart_items'])
   
-@anvil.server.callable
-def get_session_cart_items():
-  return anvil.server.session.get("cart_items", [])
-    
-@anvil.server.callable  
-def add_to_cart(id_name, **event_args):
-  # ... get product info (product_id, quantity) from form components ...
-  cart_items = anvil.server.session.get('cart_items', {})
-  if "cart_id" not in anvil.server.session:
-    anvil.server.session['cart_id'] = 100
-  else:
-    cart_id = id
-   
+
+
 
   
   anvil.server.call('add_item_to_session_cart', 'id_name','description','image','price', 'cart_id',)
