@@ -15,7 +15,7 @@ class Products(ProductsTemplate):
   def __init__(self,name,button_text,description,image,button_callback, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    self.name_label.content = name
+    self.name_label.text = name
     self.button.text = button_text
     self.description_label.content = description
     self.image_content.source = image
